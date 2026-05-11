@@ -10,15 +10,52 @@
     let ticking = false;
     const update = () => {
       const y = window.scrollY;
-      nav.classList.toggle('scrolled', y > 20);
-      if (y > lastY && y > 200) nav.classList.add('hidden');
-      else nav.classList.remove('hidden');
+      const goingDown = y > lastY;
+      const delta = Math.abs(y - lastY);
+      nav.classList.toggle('scrolled', y > 80);
+      if (delta > 6) {
+        if (goingDown && y > 240) nav.classList.add('hidden');
+        else nav.classList.remove('hidden');
+      }
+      if (y < 40) nav.classList.remove('hidden');
       lastY = y;
       ticking = false;
     };
     window.addEventListener('scroll', () => {
       if (!ticking) { requestAnimationFrame(update); ticking = true; }
     }, { passive: true });
+    document.addEventListener('mousemove', (e) => {
+      if (e.clientY < 20) nav.classList.remove('hidden');
+    });
+
+    // Mobile burger menu
+    const burger = nav.querySelector('.nav-burger');
+    const menu = document.querySelector('.mobile-menu');
+    if (burger && menu) {
+      const closeMenu = () => {
+        burger.classList.remove('open');
+        menu.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      };
+      const openMenu = () => {
+        burger.classList.add('open');
+        menu.classList.add('open');
+        burger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      };
+      burger.addEventListener('click', () => {
+        if (menu.classList.contains('open')) closeMenu();
+        else openMenu();
+      });
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 1000 && menu.classList.contains('open')) closeMenu();
+      });
+    }
     update();
   }
 

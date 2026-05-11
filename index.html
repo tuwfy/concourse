@@ -29,25 +29,34 @@
         <a href="growth.html">Growth</a>
         </div>
       <div class="nav-cta">
-        <a target="_blank" class="btn btn-ghost" href="contact.html">Sign in</a>
+        <a target="_blank" class="btn btn-ghost" href="contact.html">Get appointed</a>
         <a target="_blank" class="btn btn-solid" href="contact.html#demo">
           Book a demo
           <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
         </a>
-        <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-drawer').classList.toggle('open'); document.body.style.overflow = document.querySelector('.nav-drawer').classList.contains('open') ? 'hidden' : '';">
-          <span></span><span></span><span></span>
-        </button>
+        <button type="button" class="btn nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span class="bl"></span></button>
       </div>
     </div>
   </div>
 </nav>
 
-<div class="nav-drawer">
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Site menu">
+  <h5>Pages</h5>
   <a href="venues.html">Venues</a>
   <a href="dashboard.html">How it works</a>
   <a href="seminars.html">Seminars</a>
   <a href="growth.html">Growth</a>
+
+  <h5>Company</h5>
   <a href="contact.html">Contact</a>
+  <a href="press.html">Press</a>
+  <a href="careers.html">Careers</a>
+  <a href="methodology.html">Methodology</a>
+
+  <div class="mm-ctas">
+    <a class="btn btn-ghost" href="contact.html">Get appointed</a>
+    <a class="btn btn-solid" href="contact.html#demo">Book a demo</a>
+  </div>
 </div>
 
 <!-- ==================== HERO ==================== -->
