@@ -51,7 +51,7 @@ input, select, textarea { font: inherit; color: inherit; }
 }
 .gridlines span { border-right: 1px solid var(--line-2); }
 .gridlines span:first-child { border-left: 1px solid var(--line-2); }
-body > *:not(.gridlines):not(.nav-drawer) { position: relative; z-index: 1; }
+body > *:not(.gridlines):not(.nav-drawer):not(.mobile-menu):not(.modal-backdrop) { position: relative; z-index: 1; }
 
 /* ---------- BASE ---------- */
 .container {

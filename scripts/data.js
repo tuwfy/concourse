@@ -140,7 +140,7 @@ window.CONCOURSE_DATA = {
       rate: 15500,
       rating: 4.8,
       tag: 'New',
-      image: 'https://images.unsplash.com/photo-1519167758481-83f540f28b07?auto=format&fit=crop&w=1200&q=70',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=70',
       summary: 'Restored metalworks factory with dramatic exposed beams and natural light.'
     },
     {
@@ -154,7 +154,7 @@ window.CONCOURSE_DATA = {
       rate: 13800,
       rating: 4.7,
       tag: null,
-      image: 'https://images.unsplash.com/photo-1576506554522-8bf1ebf7c007?auto=format&fit=crop&w=1200&q=70',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=70',
       summary: 'Classic brownstone elegance with modern conference capabilities.'
     },
     {
