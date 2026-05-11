@@ -25,8 +25,7 @@
         <a href="dashboard.html">How it works</a>
         <a href="seminars.html" class="current">Seminars</a>
         <a href="growth.html">Growth</a>
-        <a href="pricing.html">Pricing</a>
-      </div>
+        </div>
       <div class="nav-cta">
         <a class="btn btn-ghost" href="contact.html">Sign in</a>
         <a class="btn btn-solid" href="contact.html#demo">
@@ -45,7 +44,6 @@
   <a href="dashboard.html">How it works</a>
   <a href="seminars.html">Seminars</a>
   <a href="growth.html">Growth</a>
-  <a href="pricing.html">Pricing</a>
   <a href="contact.html">Contact</a>
 </div>
 
@@ -216,7 +214,7 @@
               Bring a seminar in-house
               <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
             </a>
-            <a class="btn btn-ghost" href="#">Subscribe to The Brief</a>
+            <a class="btn btn-ghost" href="javascript:void(0)" onclick="window.openInfoModal(\'subscribe\')">Subscribe to The Brief</a>
           </div>
           <div class="cta-direct">
             <span><b>research@concourse.co</b></span>
@@ -237,8 +235,8 @@
         <h4>Company</h4>
         <a href="contact.html">Contact</a>
         <a href="contact.html#demo">Request demo</a>
-        <a href="#">Press</a>
-        <a href="#">Careers</a>
+        <a href="javascript:void(0)" onclick="window.openInfoModal(\'press\')">Press</a>
+        <a href="javascript:void(0)" onclick="window.openInfoModal(\'careers\')">Careers</a>
         <p>The connective tissue of the group hospitality economy.</p>
       </div>
       <div class="fg-coverage">
@@ -274,9 +272,9 @@
         <h4>For partners</h4>
         <a href="contact.html">Hotel sales</a>
         <a href="contact.html">Planner access</a>
-        <a href="#">Brief generator</a>
-        <a href="#">API docs</a>
-        <a href="#">Methodology</a>
+        <a href="javascript:void(0)" onclick="window.openInfoModal(\'brief\')">Brief generator</a>
+        <a href="javascript:void(0)" onclick="window.openInfoModal(\'api\')">API docs</a>
+        <a href="javascript:void(0)" onclick="window.openInfoModal(\'methodology\')">Methodology</a>
       </div>
     </div>
 
@@ -335,7 +333,7 @@
               Reserve a seat
               <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
             </button>
-            <a class="btn btn-ghost" href="#">Session brief</a>
+            <a class="btn btn-ghost" href="javascript:void(0)" onclick="window.openInfoModal(\'session\')">Session brief</a>
           </div>
         </article>
       `).join('');
