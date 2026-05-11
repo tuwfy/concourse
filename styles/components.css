@@ -13,14 +13,14 @@
 .page-head .breadcrumb a:hover { color: var(--accent); }
 .page-head h1 {
   font-family: var(--serif); font-weight: 500;
-  font-size: 60px;
+  font-size: clamp(34px, 4.6vw, 64px);
   line-height: 1.02; letter-spacing: -0.045em;
   margin: 0; text-wrap: balance; color: var(--ink);
   max-width: 22ch;
 }
 .page-head h1 .soft { color: var(--accent); }
 .page-head .lede {
-  font-family: var(--sans); font-size: 60px;
+  font-family: var(--sans); font-size: clamp(15px, 0.5vw + 12px, 17.5px);
   line-height: 1.55; color: var(--muted);
   max-width: 56ch; margin: clamp(24px, 2.4vw, 36px) 0 0;
 }
@@ -272,7 +272,7 @@
 }
 .kpi .val {
   font-family: var(--serif); font-weight: 400;
-  font-size: 60px;
+  font-size: clamp(36px, 4vw, 52px);
   line-height: 1; letter-spacing: -0.025em; margin-top: 14px; color: var(--ink);
   display: block;
 }
@@ -432,7 +432,7 @@
 }
 .tier .price {
   font-family: var(--serif); font-weight: 400;
-  font-size: 60px; line-height: 1; letter-spacing: -0.035em;
+  font-size: clamp(36px, 4vw, 52px); line-height: 1; letter-spacing: -0.035em;
   margin: 0; color: var(--ink);
 }
 .tier .price-note {
@@ -531,7 +531,7 @@
 }
 .contact-info h2 {
   font-family: var(--serif); font-weight: 500;
-  font-size: 60px;
+  font-size: clamp(28px, 4vw, 48px);
   line-height: 1.05; letter-spacing: -0.03em; margin: 16px 0 18px; color: var(--ink);
 }
 .contact-info .lede {

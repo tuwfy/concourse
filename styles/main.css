@@ -173,7 +173,7 @@ nav.top.scrolled .row { height: 56px; }
   margin-top: clamp(32px, 3.6vw, 72px); padding-top: clamp(20px, 1.8vw, 32px); border-top: 1px solid var(--line);
 }
 .hero .lede {
-  font-family: var(--sans); font-size: 60px;
+  font-family: var(--sans); font-size: clamp(15.5px, 0.4vw + 12px, 18.5px);
   line-height: 1.55; color: var(--ink-2);
   max-width: 54ch; margin: 0; flex: 1 1 380px;
 }
@@ -196,7 +196,7 @@ nav.top.scrolled .row { height: 56px; }
 }
 .spec-card .v {
   font-family: var(--serif); font-weight: 400;
-  font-size: 60px;
+  font-size: clamp(18px, 0.7vw + 14px, 24px);
   letter-spacing: -0.01em; margin-top: 10px; line-height: 1.15;
 }
 .spec-card .v .dot {
@@ -448,14 +448,14 @@ a.lc.lc-more .meta .up { color: #fff; }
 .cta-final .cta-eyebrow-col { padding-top: 10px; }
 .cta-final h2 {
   font-family: var(--serif); font-weight: 500;
-  font-size: 60px;
+  font-size: clamp(40px, 6vw, 88px);
   line-height: 1.00; letter-spacing: -0.04em; margin: 0;
   max-width: 16ch; text-wrap: balance; color: var(--ink);
 }
 .cta-final h2 .soft { color: var(--accent); }
 .cta-final .cta-body {
   font-family: var(--sans); font-weight: 400;
-  font-size: 60px; line-height: 1.55;
+  font-size: clamp(15px, 0.5vw + 12px, 17.5px); line-height: 1.55;
   color: var(--muted); max-width: 56ch;
   margin: clamp(24px, 2.4vw, 36px) 0 0;
 }
@@ -552,7 +552,7 @@ footer.site > .container { position: relative; z-index: 1; }
   flex: 0 1 auto; min-width: 0;
   font-family: var(--serif); font-weight: 600; line-height: 0.82;
   letter-spacing: -0.06em; text-transform: lowercase;
-  font-size: 60px;
+  font-size: clamp(80px, 16vw, 260px);
   margin: 0; color: var(--ink); white-space: nowrap;
 }
 .bigmark .word .acc { color: var(--accent); }
@@ -587,7 +587,7 @@ footer.site > .container { position: relative; z-index: 1; }
 .nav-drawer.open { transform: translateY(0); }
 .nav-drawer a {
   font-family: var(--serif);
-  font-size: 60px;
+  font-size: clamp(36px, 8vw, 56px);
   font-weight: 500;
   letter-spacing: -0.04em;
   padding: 14px 0;
