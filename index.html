@@ -443,23 +443,93 @@
     const dots = document.querySelectorAll('.q-dot');
     const slides = document.querySelectorAll('.q-slide');
     const bys = document.querySelectorAll('.quote-stage .by');
-    let active = 0;
-    let timer;
+    const stage = document.querySelector('.quote-stage');
+    if (!dots.length) return;
 
-    function go(i) {
-      active = i;
-      dots.forEach((d, k) => d.classList.toggle('active', k === i));
-      slides.forEach((s, k) => s.classList.toggle('active', k === i));
-      bys.forEach((b, k) => b.classList.toggle('active', k === i));
+    const DUR = 6000; // ms per quote
+    let idx = 0;
+    let timer = null;
+    let paused = false;
+
+    function render(){
+      dots.forEach((d, k) => {
+        const on = k === idx;
+        d.classList.toggle('active', on);
+        d.classList.remove('cycling');
+      });
+      slides.forEach((s, k) => s.classList.toggle('active', k === idx));
+      bys.forEach((b, k) => b.classList.toggle('active', k === idx));
+
+      if (!paused){
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          const active = document.querySelector('.q-dot.active');
+          if (active) active.classList.add('cycling');
+        }));
+      }
     }
 
-    function autoCycle() {
-      clearInterval(timer);
-      timer = setInterval(() => go((active + 1) % dots.length), 6500);
+    function advance(){
+      idx = (idx + 1) % dots.length;
+      render();
     }
 
-    dots.forEach((d, i) => d.addEventListener('click', () => { go(i); autoCycle(); }));
-    autoCycle();
+    function start(){
+      stop();
+      if (paused) return;
+      timer = setTimeout(advance, DUR);
+    }
+    function stop(){
+      if (timer){ clearTimeout(timer); timer = null; }
+    }
+    function restart(){ start(); }
+
+    dots.forEach((d, i) => d.addEventListener('click', () => {
+      idx = i;
+      render();
+      restart();
+    }));
+
+    const section = document.querySelector('section.quote');
+    if (section){
+      section.addEventListener('mouseenter', () => { paused = true; stop();
+        document.querySelectorAll('.q-dot').forEach(d => d.classList.remove('cycling'));
+      });
+      section.addEventListener('mouseleave', () => { paused = false; render(); start(); });
+      section.addEventListener('focusin', () => { paused = true; stop();
+        document.querySelectorAll('.q-dot').forEach(d => d.classList.remove('cycling'));
+      });
+      section.addEventListener('focusout', (e) => {
+        if (!section.contains(e.relatedTarget)) { paused = false; render(); start(); }
+      });
+    }
+
+    let started = false;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting && !started){
+          started = true;
+          render();
+          start();
+        }
+      });
+    }, { threshold: 0.25 });
+    if (section) io.observe(section);
+    else { render(); start(); }
+
+    document.addEventListener('transitionend', (e) => {
+      if (e.propertyName !== 'width') return;
+      const t = e.target;
+      if (!(t instanceof HTMLElement)) return;
+      if (!t.classList.contains('q-dot') || !t.classList.contains('active') || !t.classList.contains('cycling')) return;
+      if (paused) return;
+      stop();
+      advance();
+      start();
+    }, true);
+
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.documentElement.style.setProperty('--q-dur', '0.001s');
+    }
   })();
 </script>
 </body>

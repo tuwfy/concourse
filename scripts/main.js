@@ -147,4 +147,49 @@
       if (path === '' && href === 'index.html') a.classList.add('current');
     });
   }
+  // ---------- Scroll reveal ----------
+  (function(){
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+
+    const REVEAL_SELECTORS = [
+      '.sect-head', '.hero h1', '.hero .lede', '.hero-cta', '.hero-top', '.hero-sub',
+      '.features', '.how', '.lines-grid', '.stats-grid', '.spec-card',
+      '.cta-final h2', '.cta-final .btns', '.cta-final .cta-direct', '.cta-grid',
+      '.bigmark', 'blockquote', '.quote-stage', '.quote-layout', '.cov-cols'
+    ];
+
+    function shouldSkip(el){
+      if (el.closest('nav.top')) return true;
+      if (el.closest('footer.site .foot-grid')) return true;
+      if (el.closest('.mobile-menu')) return true;
+      if (el.hasAttribute('data-reveal')) return true;
+      return false;
+    }
+
+    const sel = REVEAL_SELECTORS.join(',');
+    document.querySelectorAll(sel).forEach(el => {
+      if (shouldSkip(el)) return;
+      el.setAttribute('data-reveal', '');
+    });
+
+    const io = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.15 });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.85) {
+        el.classList.add('is-visible');
+        return;
+      }
+      io.observe(el);
+    });
+  })();
+
 })();
