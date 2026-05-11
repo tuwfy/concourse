@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Growth · Concourse</title>
+<meta name="description" content="A live watchlist of where group business is moving — 10-year forecasts, confirmed conference pipeline, and a tourism news feed across 14 markets.">
+<meta name="theme-color" content="#1f4e3a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+
+<div class="gridlines" aria-hidden="true"><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+
+<nav class="top" id="topnav">
+  <div class="container">
+    <div class="row">
+      <a class="logo" href="index.html">concourse<span class="dot"></span></a>
+      <div class="nav-links">
+        <a href="venues.html">Venues</a>
+        <a href="dashboard.html">How it works</a>
+        <a href="seminars.html">Seminars</a>
+        <a href="growth.html" class="current">Growth</a>
+        <a href="pricing.html">Pricing</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="contact.html">Sign in</a>
+        <a class="btn btn-solid" href="contact.html#demo">
+          Book a demo
+          <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+        </a>
+        <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-drawer').classList.toggle('open'); document.body.style.overflow = document.querySelector('.nav-drawer').classList.contains('open') ? 'hidden' : '';">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="nav-drawer">
+  <a href="venues.html">Venues</a>
+  <a href="dashboard.html">How it works</a>
+  <a href="seminars.html">Seminars</a>
+  <a href="growth.html">Growth</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<header class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> · Growth · Watchlist</div>
+    <h1>Where group business is <span class="soft">moving</span>.</h1>
+    <p class="lede">A live read across fourteen markets — 10-year forecasts on group room nights, confirmed conference pipeline through 2027, and the development and tourism signals shaping each region. Updated weekly from the network.</p>
+  </div>
+</header>
+
+<!-- ==================== WATCHLIST SPEC CARD ==================== -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="spec-card">
+      <div class="cell">
+        <div class="k">Watchlist</div>
+        <div class="v"><span class="dot"></span>14 markets · refreshed Monday 06:00 ET</div>
+      </div>
+      <div class="cell">
+        <div class="k">Aggregate group volume · Q1 2026</div>
+        <div class="v">$4.2B</div>
+      </div>
+      <div class="cell">
+        <div class="k">Avg projected 10-yr growth</div>
+        <div class="v">+24.8%</div>
+      </div>
+      <div class="cell">
+        <div class="k">Pipeline · next 24 months</div>
+        <div class="v">2,140 events</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TRENDS WATCH · MARKET SELECTOR ==================== -->
+<section>
+  <div class="container">
+    <div class="sect-head">
+      <div>
+        <div class="eyebrow">Trends watch</div>
+        <p class="lede">Click any market to load its 10-year projection, confirmed conference pipeline, and development notes.</p>
+      </div>
+      <h2>A live read on where the next decade of <span class="soft">tourism and group business</span> is concentrating.</h2>
+    </div>
+
+    <div class="markets-grid" id="marketsGrid"></div>
+  </div>
+</section>
+
+<!-- ==================== SELECTED MARKET DETAIL ==================== -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="sect-head">
+      <div>
+        <div class="eyebrow" id="marketEyebrow">Selected · Las Vegas, NV</div>
+        <p class="lede" id="marketSummary">A mature group market at scale.</p>
+      </div>
+      <h2 id="marketHeadline">10-year projection — <span class="soft">group room nights and conference pipeline.</span></h2>
+    </div>
+
+    <div class="market-detail" id="marketDetail">
+      <!-- left pane: chart + KPIs -->
+      <div class="pane">
+        <div class="pane-head">
+          <h3 id="paneL-title">Group room nights · 2026 – 2035</h3>
+          <div class="pane-sub">Thousands · projected from network signal</div>
+        </div>
+
+        <div class="market-kpi-row">
+          <div class="market-kpi">
+            <div class="lab">Group ADR · today</div>
+            <div class="val" id="kpiADR">$268</div>
+            <div class="delta" id="kpiADRdelta">→ $312 by 2030</div>
+          </div>
+          <div class="market-kpi">
+            <div class="lab">24-mo pipeline value</div>
+            <div class="val" id="kpiPipeline">$1.8<span class="soft">B</span></div>
+          </div>
+          <div class="market-kpi">
+            <div class="lab">Confirmed conferences</div>
+            <div class="val" id="kpiConf">142</div>
+          </div>
+        </div>
+
+        <div class="line-chart-wrap">
+          <svg class="line-chart" id="lineChart" viewBox="0 0 1000 260" preserveAspectRatio="none"></svg>
+          <div class="line-chart-axis">
+            <span>2026</span><span>2028</span><span>2030</span><span>2032</span><span>2034</span>
+          </div>
+        </div>
+
+        <div class="dev-section">
+          <div class="dev-head">Development · capital pipeline</div>
+          <ul class="dev-notes" id="devNotes"></ul>
+        </div>
+      </div>
+
+      <!-- right pane: confirmed pipeline -->
+      <div class="pane">
+        <div class="pane-head">
+          <h3>Confirmed business pipeline</h3>
+          <div class="pane-sub">Next 18 months · selected events</div>
+        </div>
+        <div class="pipeline-list" id="pipelineList"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== IMPACT AT A GLANCE ==================== -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="sect-head">
+      <div>
+        <div class="eyebrow">Impact at a glance</div>
+        <p class="lede">Markets sorted by projected 2026 → 2035 group volume growth.</p>
+      </div>
+      <h2>Where the next decade <span class="soft">compounds.</span></h2>
+    </div>
+
+    <div class="compare-chart" id="compareChart"></div>
+  </div>
+</section>
+
+<!-- ==================== NEWS FEED ==================== -->
+<section class="lines" style="padding-top: clamp(80px, 10vw, 130px);">
+  <div class="container">
+    <div class="sect-head">
+      <div>
+        <div class="eyebrow">News feed · The Brief</div>
+        <p class="lede">Tourism, development, conference wins, and leisure trends — pulled from the network this week.</p>
+      </div>
+      <h2>What we're <span class="soft">watching this week.</span></h2>
+    </div>
+
+    <div class="news-grid" id="newsGrid"></div>
+  </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="cta-final">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-eyebrow-col"><div class="eyebrow">Get the Brief weekly</div></div>
+      <div>
+        <h2>This is the <span class="soft">public read.</span> The workspace reads deeper.</h2>
+        <p class="cta-body">Every market on the watchlist has a private workspace behind it — comp-set scoping, RFP routing, and closed-lost analysis on top of the public forecast. <b>Hotels</b> get it on Insights; <b>planners</b> route briefs against it for free.</p>
+        <div class="cta-actions">
+          <div class="btns">
+            <a class="btn btn-solid" href="contact.html#demo">
+              Open a workspace
+              <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="dashboard.html">Preview Insights</a>
+          </div>
+          <div class="cta-direct">
+            <span><b>research@concourse.co</b></span>
+            <a href="#">Subscribe to The Brief →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site">
+  <div class="footer-grid-lines" aria-hidden="true"><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h4>Company</h4>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html#demo">Request demo</a>
+        <a href="#">Press</a>
+        <a href="#">Careers</a>
+        <p>The connective tissue of the group hospitality economy.</p>
+      </div>
+      <div class="fg-coverage">
+        <h4>Coverage</h4>
+        <div class="cov-cols">
+          <div class="cov-col">
+            <p class="cov-sub">Marketplace</p>
+            <a href="venues.html">Boutique hotels</a>
+            <a href="venues.html">Lifestyle hotels</a>
+            <a href="venues.html">Historic venues</a>
+            <a href="venues.html">Resorts</a>
+            <a href="venues.html">Industrial / loft</a>
+          </div>
+          <div class="cov-col">
+            <p class="cov-sub">Insights</p>
+            <a href="dashboard.html">Group ADR benchmarks</a>
+            <a href="growth.html">Market watchlist</a>
+            <a href="dashboard.html">Closed-lost analysis</a>
+            <a href="dashboard.html">Buyer intent signals</a>
+            <a href="dashboard.html">PMS / CRM / DMS sync</a>
+          </div>
+          <div class="cov-col">
+            <p class="cov-sub">Seminars</p>
+            <a href="seminars.html">AI in hospitality</a>
+            <a href="seminars.html">Dynamic group pricing</a>
+            <a href="seminars.html">Buyer intent</a>
+            <a href="seminars.html">Data rights</a>
+            <a href="seminars.html">Operations</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>For partners</h4>
+        <a href="contact.html">Hotel sales</a>
+        <a href="contact.html">Planner access</a>
+        <a href="#">Brief generator</a>
+        <a href="#">API docs</a>
+        <a href="#">Methodology</a>
+      </div>
+    </div>
+
+    <div class="bigmark">
+      <h2 class="word">concourse<span class="acc">.</span></h2>
+      <div class="meta">
+        <b>The operating layer for group hospitality</b>
+        142 Walker St., 4th Floor<br>
+        Tribeca · New York, NY 10013<br>
+        sales@concourse.co · (628) 222-4044
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Concourse Research, Inc.</span>
+      <span>Privacy · Terms · Security</span>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/data.js"></script>
+<script src="scripts/main.js"></script>
+<script>
+  (function () {
+    const D = window.CONCOURSE_DATA;
+    const markets = D.markets;
+
+    // ---------- Markets selector ----------
+    const grid = document.getElementById('marketsGrid');
+    function renderTiles(activeId) {
+      grid.innerHTML = markets.map(m => {
+        const growthPct = ((m.forecast[9] / m.forecast[0]) - 1) * 100;
+        return `
+          <button class="market-tile ${m.id === activeId ? 'active' : ''}" data-id="${m.id}">
+            <div class="top">
+              <span class="state">${m.state}</span>
+              <span class="status ${m.status}">${m.statusLabel}</span>
+            </div>
+            <div class="city">${m.name}</div>
+            <div class="meta">
+              <span>10-yr <b>+${growthPct.toFixed(0)}%</b></span>
+              <span>${m.conferenceCount} conf.</span>
+            </div>
+          </button>
+        `;
+      }).join('');
+      grid.querySelectorAll('.market-tile').forEach(btn => {
+        btn.addEventListener('click', () => selectMarket(btn.dataset.id));
+      });
+    }
+
+    // ---------- Line chart ----------
+    function renderLineChart(forecast) {
+      const W = 1000, H = 260;
+      const padTop = 16, padBottom = 32;
+      const chartH = H - padTop - padBottom;
+      const max = Math.max(...forecast) * 1.04;
+      const min = Math.min(...forecast) * 0.94;
+      const range = max - min;
+
+      const points = forecast.map((v, i) => {
+        const x = (i / (forecast.length - 1)) * W;
+        const y = padTop + (1 - (v - min) / range) * chartH;
+        return [x, y];
+      });
+
+      const linePath = points.map((p, i) => (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
+      const areaPath = linePath +
+        ` L${W},${H - padBottom} L0,${H - padBottom} Z`;
+
+      // Y-axis gridlines (3 rows: top, mid, bottom)
+      const gridY1 = padTop;
+      const gridY2 = padTop + chartH / 2;
+      const gridY3 = padTop + chartH;
+
+      const svg = `
+        <line x1="0" y1="${gridY1}" x2="${W}" y2="${gridY1}" stroke="rgba(17,17,17,0.06)" stroke-dasharray="2 4" vector-effect="non-scaling-stroke"/>
+        <line x1="0" y1="${gridY2}" x2="${W}" y2="${gridY2}" stroke="rgba(17,17,17,0.045)" stroke-dasharray="2 4" vector-effect="non-scaling-stroke"/>
+        <line x1="0" y1="${gridY3}" x2="${W}" y2="${gridY3}" stroke="rgba(17,17,17,0.12)" vector-effect="non-scaling-stroke"/>
+        <path d="${areaPath}" fill="#1f4e3a" fill-opacity="0.08"/>
+        <path d="${linePath}" fill="none" stroke="#1f4e3a" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        <!-- max label right -->
+        <text x="${W - 6}" y="${gridY1 + 10}" font-family="Geist Mono, monospace" font-size="10" fill="#76736c" text-anchor="end">${Math.round(max).toLocaleString()}k</text>
+        <text x="${W - 6}" y="${gridY3 - 4}" font-family="Geist Mono, monospace" font-size="10" fill="#76736c" text-anchor="end">${Math.round(min).toLocaleString()}k</text>
+        <!-- end dot -->
+        <circle cx="${points[points.length - 1][0]}" cy="${points[points.length - 1][1]}" r="4" fill="#1f4e3a"/>
+        <circle cx="${points[0][0]}" cy="${points[0][1]}" r="3" fill="#1f4e3a" fill-opacity="0.5"/>
+      `;
+      document.getElementById('lineChart').innerHTML = svg;
+    }
+
+    // ---------- Select a market ----------
+    function selectMarket(id) {
+      const m = markets.find(x => x.id === id) || markets[0];
+
+      document.querySelectorAll('.market-tile').forEach(t =>
+        t.classList.toggle('active', t.dataset.id === m.id)
+      );
+
+      // header
+      document.getElementById('marketEyebrow').textContent = 'Selected · ' + m.name + ', ' + m.state;
+      document.getElementById('marketSummary').textContent = m.summary;
+      document.getElementById('marketHeadline').innerHTML = m.name + ' — <span class="soft">10-year group room-night projection.</span>';
+
+      // KPIs
+      document.getElementById('kpiADR').textContent = '$' + m.currentADR;
+      document.getElementById('kpiADRdelta').textContent = '→ $' + m.projectedADR + ' by 2030';
+      const pipelineB = (m.groupPipeline / 1000);
+      document.getElementById('kpiPipeline').innerHTML = pipelineB >= 1
+        ? '$' + pipelineB.toFixed(pipelineB >= 10 ? 1 : 2) + '<span class="soft">B</span>'
+        : '$' + m.groupPipeline + '<span class="soft">M</span>';
+      document.getElementById('kpiConf').textContent = m.conferenceCount;
+
+      // chart
+      renderLineChart(m.forecast);
+
+      // pipeline
+      document.getElementById('pipelineList').innerHTML = m.pipeline.map(p => `
+        <div class="pli">
+          <div class="pli-top">
+            <span>${p.dates}</span>
+            <span class="acc">${p.value}</span>
+          </div>
+          <div class="pli-name">${p.name}</div>
+          <div class="pli-att">${p.att}</div>
+        </div>
+      `).join('');
+
+      // development
+      document.getElementById('devNotes').innerHTML = m.development.map(d => `<li>${d}</li>`).join('');
+    }
+
+    // ---------- Compare chart ----------
+    function renderCompare() {
+      const sorted = [...markets].map(m => ({
+        ...m,
+        growth: ((m.forecast[9] / m.forecast[0]) - 1) * 100
+      })).sort((a, b) => b.growth - a.growth);
+      const maxGrowth = sorted[0].growth;
+
+      document.getElementById('compareChart').innerHTML = sorted.map(m => `
+        <div class="compare-row ${m.status}">
+          <div class="label">${m.name}<small>${m.state}</small></div>
+          <div class="bar-wrap"><div class="bar-fill-h" style="width: ${(m.growth / maxGrowth * 100).toFixed(1)}%;"></div></div>
+          <div class="pct">+${m.growth.toFixed(1)}%</div>
+        </div>
+      `).join('');
+    }
+
+    // ---------- News feed ----------
+    function renderNews() {
+      document.getElementById('newsGrid').innerHTML = D.news.map(n => `
+        <article class="news-card">
+          <div class="top">
+            <span class="cat ${n.cat}">${n.catLabel}</span>
+            <span>${n.date}</span>
+          </div>
+          <p class="head">${n.head}</p>
+          <div class="tag">Market · <b>${n.market}</b></div>
+        </article>
+      `).join('');
+    }
+
+    // ---------- Init ----------
+    renderTiles(markets[0].id);
+    selectMarket(markets[0].id);
+    renderCompare();
+    renderNews();
+  })();
+</script>
+</body>
+</html>

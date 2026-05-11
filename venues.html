@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Venues · Concourse</title>
+<meta name="description" content="A verified marketplace of group hotels and event venues. Free for planners, every listing PMS-linked, every response time tracked.">
+<meta name="theme-color" content="#1f4e3a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+
+<div class="gridlines" aria-hidden="true"><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+
+<nav class="top" id="topnav">
+  <div class="container">
+    <div class="row">
+      <a class="logo" href="index.html">concourse<span class="dot"></span></a>
+      <div class="nav-links">
+        <a href="venues.html" class="current">Venues</a>
+        <a href="dashboard.html">How it works</a>
+        <a href="seminars.html">Seminars</a>
+        <a href="growth.html">Growth</a>
+        <a href="pricing.html">Pricing</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="contact.html">Sign in</a>
+        <a class="btn btn-solid" href="contact.html#demo">
+          Book a demo
+          <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+        </a>
+        <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-drawer').classList.toggle('open'); document.body.style.overflow = document.querySelector('.nav-drawer').classList.contains('open') ? 'hidden' : '';">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="nav-drawer">
+  <a href="venues.html">Venues</a>
+  <a href="dashboard.html">How it works</a>
+  <a href="seminars.html">Seminars</a>
+  <a href="growth.html">Growth</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<header class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> · Marketplace</div>
+    <h1>Venues that respond. Calendars that are <span class="soft">real</span>.</h1>
+    <p class="lede">Search 2,800+ verified group properties across thirty-one metros. Free for planners. Every listing PMS-linked, every response time tracked, every relationship direct — no resellers.</p>
+  </div>
+</header>
+
+<section style="padding-top: 0;">
+  <div class="container">
+
+    <form class="search-bar" id="venueSearch" onsubmit="event.preventDefault(); window.applyFilters();">
+      <div class="field">
+        <label>Destination or venue</label>
+        <input id="q" type="text" placeholder="e.g. Charleston, Halcyon" autocomplete="off">
+      </div>
+      <div class="field">
+        <label>Region</label>
+        <select id="region">
+          <option value="">All regions</option>
+          <option value="northeast">Northeast</option>
+          <option value="south">South</option>
+          <option value="midwest">Midwest</option>
+          <option value="west">West</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Property type</label>
+        <select id="type">
+          <option value="">Any type</option>
+          <option value="boutique">Boutique</option>
+          <option value="lifestyle">Lifestyle</option>
+          <option value="historic">Historic</option>
+          <option value="resort">Resort</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Min capacity</label>
+        <select id="cap">
+          <option value="0">Any</option>
+          <option value="100">100+</option>
+          <option value="250">250+</option>
+          <option value="500">500+</option>
+          <option value="750">750+</option>
+        </select>
+      </div>
+      <button type="submit" class="search-submit">
+        Search
+        <svg class="arr" width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+      </button>
+    </form>
+
+    <div class="venues-toolbar">
+      <span class="results-count" id="resultsCount">Loading…</span>
+      <div class="sort-control">
+        <label for="sort">Sort by</label>
+        <select id="sort" onchange="window.applyFilters()">
+          <option value="recommended">Recommended</option>
+          <option value="rating">Highest rated</option>
+          <option value="price-low">Day rate — low to high</option>
+          <option value="price-high">Day rate — high to low</option>
+          <option value="capacity">Capacity</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="venueGrid" class="venue-grid"></div>
+  </div>
+</section>
+
+<!-- ==================== INQUIRE MODAL ==================== -->
+<div class="modal-backdrop" id="inquireModal">
+  <div class="modal">
+    <button class="modal-close" onclick="window.closeModal('inquireModal')" aria-label="Close">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 1 13 13 M13 1 1 13"/></svg>
+    </button>
+    <div class="modal-eyebrow">Inquiry · Direct line</div>
+    <h3 id="inquireTitle">Inquire about this venue</h3>
+    <p class="modal-sub">Most venues respond in under four hours. We'll cc the partner on the file for context.</p>
+    <form data-intercept data-close-modal="inquireModal" data-success="Inquiry sent · Venue will respond shortly">
+      <div class="field">
+        <label>Your name</label>
+        <input type="text" required>
+      </div>
+      <div class="field">
+        <label>Work email</label>
+        <input type="email" required>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label>Event date</label>
+          <input type="date" required>
+        </div>
+        <div class="field">
+          <label>Headcount</label>
+          <input type="number" min="1" required>
+        </div>
+      </div>
+      <div class="field">
+        <label>Brief description</label>
+        <textarea placeholder="Format, A/V, dietary needs, room block…" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-solid">
+        Send inquiry
+        <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- ==================== CTA ==================== -->
+<section class="cta-final">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-eyebrow-col"><div class="eyebrow">Can't find it</div></div>
+      <div>
+        <h2>Submit the brief. <span class="soft">We'll route it.</span></h2>
+        <p class="cta-body">Send one detailed brief. A <b>named partner</b> reviews the file, builds a shortlist of three to five venues, and gets proposals back — usually inside one business day.</p>
+        <div class="cta-actions">
+          <div class="btns">
+            <a class="btn btn-solid" href="contact.html">
+              Submit a brief
+              <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="contact.html#demo">Talk to sales</a>
+          </div>
+          <div class="cta-direct">
+            <span><b>planners@concourse.co</b></span>
+            <a href="contact.html">Open a workspace →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site">
+  <div class="footer-grid-lines" aria-hidden="true"><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h4>Company</h4>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html#demo">Request demo</a>
+        <a href="#">Press</a>
+        <a href="#">Careers</a>
+        <p>The connective tissue of the group hospitality economy.</p>
+      </div>
+      <div class="fg-coverage">
+        <h4>Coverage</h4>
+        <div class="cov-cols">
+          <div class="cov-col">
+            <p class="cov-sub">Marketplace</p>
+            <a href="venues.html">Boutique hotels</a>
+            <a href="venues.html">Lifestyle hotels</a>
+            <a href="venues.html">Historic venues</a>
+            <a href="venues.html">Resorts</a>
+            <a href="venues.html">Industrial / loft</a>
+          </div>
+          <div class="cov-col">
+            <p class="cov-sub">Insights</p>
+            <a href="dashboard.html">Group ADR benchmarks</a>
+            <a href="dashboard.html">Closed-lost analysis</a>
+            <a href="dashboard.html">Buyer intent signals</a>
+            <a href="dashboard.html">Comp-set scoping</a>
+            <a href="dashboard.html">PMS / CRM / DMS sync</a>
+          </div>
+          <div class="cov-col">
+            <p class="cov-sub">Seminars</p>
+            <a href="seminars.html">AI in hospitality</a>
+            <a href="seminars.html">Dynamic group pricing</a>
+            <a href="seminars.html">Buyer intent</a>
+            <a href="seminars.html">Data rights</a>
+            <a href="seminars.html">Operations</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>For partners</h4>
+        <a href="contact.html">Hotel sales</a>
+        <a href="contact.html">Planner access</a>
+        <a href="#">Brief generator</a>
+        <a href="#">API docs</a>
+        <a href="#">Methodology</a>
+      </div>
+    </div>
+
+    <div class="bigmark">
+      <h2 class="word">concourse<span class="acc">.</span></h2>
+      <div class="meta">
+        <b>The operating layer for group hospitality</b>
+        142 Walker St., 4th Floor<br>
+        Tribeca · New York, NY 10013<br>
+        sales@concourse.co · (628) 222-4044
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Concourse Research, Inc.</span>
+      <span>Privacy · Terms · Security</span>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/data.js"></script>
+<script src="scripts/main.js"></script>
+<script>
+  (function () {
+    const grid = document.getElementById('venueGrid');
+    const count = document.getElementById('resultsCount');
+    const all = window.CONCOURSE_DATA.venues;
+
+    function fmtPrice(n) { return '$' + n.toLocaleString(); }
+
+    function render(list) {
+      count.textContent = list.length + ' venue' + (list.length === 1 ? '' : 's') + ' available';
+      if (!list.length) {
+        grid.innerHTML = `<div class="no-results">
+          <h3>No venues match those filters.</h3>
+          <p>Widen the region or capacity — or submit a brief and we'll route it manually.</p>
+        </div>`;
+        return;
+      }
+      grid.innerHTML = list.map(v => `
+        <article class="venue-card" onclick="window.openInquire('${v.id}','${v.name.replace(/'/g, "\\'")}')">
+          <div class="venue-img">
+            <img src="${v.image}" alt="${v.name}" loading="lazy">
+            ${v.tag ? `<span class="venue-tag">${v.tag}</span>` : ''}
+          </div>
+          <div class="venue-info">
+            <div class="cat">${v.city} · ${v.type}</div>
+            <div class="name">${v.name}</div>
+            <p class="summary">${v.summary}</p>
+            <div class="meta">
+              <span class="price">${fmtPrice(v.rate)}/day</span>
+              <span>up to ${v.capacity}</span>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    window.applyFilters = function () {
+      const q = document.getElementById('q').value.trim().toLowerCase();
+      const region = document.getElementById('region').value;
+      const type = document.getElementById('type').value;
+      const cap = parseInt(document.getElementById('cap').value, 10);
+      const sort = document.getElementById('sort').value;
+
+      let list = all.filter(v => {
+        if (q && !(v.name.toLowerCase().includes(q) || v.city.toLowerCase().includes(q))) return false;
+        if (region && v.region !== region) return false;
+        if (type && v.type !== type) return false;
+        if (cap && v.capacity < cap) return false;
+        return true;
+      });
+
+      if (sort === 'rating') list.sort((a, b) => b.rating - a.rating);
+      else if (sort === 'price-low') list.sort((a, b) => a.rate - b.rate);
+      else if (sort === 'price-high') list.sort((a, b) => b.rate - a.rate);
+      else if (sort === 'capacity') list.sort((a, b) => b.capacity - a.capacity);
+
+      render(list);
+    };
+
+    window.openInquire = function (id, name) {
+      document.getElementById('inquireTitle').textContent = name;
+      window.openModal('inquireModal');
+    };
+
+    render(all);
+
+    ['q', 'region', 'type', 'cap'].forEach(id => {
+      const el = document.getElementById(id);
+      el.addEventListener('input', () => window.applyFilters());
+      el.addEventListener('change', () => window.applyFilters());
+    });
+  })();
+</script>
+</body>
+</html>

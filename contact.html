@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact & Book a Demo · Concourse</title>
+<meta name="description" content="Talk to Concourse — book a demo, submit a planning brief, or contact the research practice.">
+<meta name="theme-color" content="#1f4e3a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+
+<div class="gridlines" aria-hidden="true"><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+
+<nav class="top" id="topnav">
+  <div class="container">
+    <div class="row">
+      <a class="logo" href="index.html">concourse<span class="dot"></span></a>
+      <div class="nav-links">
+        <a href="venues.html">Venues</a>
+        <a href="dashboard.html">How it works</a>
+        <a href="seminars.html">Seminars</a>
+        <a href="growth.html">Growth</a>
+        <a href="pricing.html">Pricing</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="contact.html">Sign in</a>
+        <a class="btn btn-solid" href="contact.html#demo">
+          Book a demo
+          <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+        </a>
+        <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-drawer').classList.toggle('open'); document.body.style.overflow = document.querySelector('.nav-drawer').classList.contains('open') ? 'hidden' : '';">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="nav-drawer">
+  <a href="venues.html">Venues</a>
+  <a href="dashboard.html">How it works</a>
+  <a href="seminars.html">Seminars</a>
+  <a href="growth.html">Growth</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<header class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> · Contact</div>
+    <h1>Tell us what you're trying to <span class="soft">move</span>.</h1>
+    <p class="lede">Whether you're a hotel evaluating the platform, a planner sourcing a venue, or a research lead pitching a session — there's a form below. Real humans read all of them.</p>
+  </div>
+</header>
+
+<section id="demo" style="padding-top: 0;">
+  <div class="container">
+
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <div class="eyebrow">Book a demo</div>
+        <h2>25 minutes. Your data. <span style="color: var(--accent);">Real answers.</span></h2>
+        <p class="lede">We don't run scripted demos. Send us your portfolio, your channel mix, or a recent closed-lost — we'll build the call around it. The session ends with a one-page brief you can take back to your team.</p>
+
+        <div class="contact-details">
+          <div class="contact-detail">
+            <span class="lab">Hotels</span>
+            <div>
+              <div class="val">sales@concourse.co</div>
+              <div class="sub">Independent properties · brand & management groups</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="lab">Planners</span>
+            <div>
+              <div class="val">planners@concourse.co</div>
+              <div class="sub">Submit a brief — we route it within one business day</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="lab">Research</span>
+            <div>
+              <div class="val">research@concourse.co</div>
+              <div class="sub">Seminar partnerships · data requests · The Brief</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="lab">Press</span>
+            <div>
+              <div class="val">press@concourse.co</div>
+              <div class="sub">Same-day response on deadline inquiries</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="lab">Office</span>
+            <div>
+              <div class="val">142 Walker St., 4th Floor</div>
+              <div class="sub">Tribeca · New York, NY 10013</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Request a working session</h3>
+
+        <form data-intercept data-success="Got it · A member of the team will reach out within one business day">
+          <div class="field">
+            <label>I am a</label>
+            <div class="radio-chip-group">
+              <div class="radio-chip"><input type="radio" name="role" id="role-hotel" checked><label for="role-hotel">Hotel / venue</label></div>
+              <div class="radio-chip"><input type="radio" name="role" id="role-planner"><label for="role-planner">Event planner</label></div>
+              <div class="radio-chip"><input type="radio" name="role" id="role-group"><label for="role-group">Brand / mgmt group</label></div>
+              <div class="radio-chip"><input type="radio" name="role" id="role-other"><label for="role-other">Other</label></div>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label>Full name</label>
+              <input type="text" required>
+            </div>
+            <div class="field">
+              <label>Work email</label>
+              <input type="email" required>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label>Company</label>
+              <input type="text" required>
+            </div>
+            <div class="field">
+              <label>Title / role</label>
+              <input type="text" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>What are you hoping to learn from a demo?</label>
+            <textarea placeholder="e.g. We're a 4-property lifestyle group looking to replace Cvent. We want to see closed-lost reporting and how the comp-set benchmarking works."></textarea>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label>Portfolio size</label>
+              <select>
+                <option>1 property</option>
+                <option>2 – 5 properties</option>
+                <option>6 – 15 properties</option>
+                <option>16+ properties</option>
+                <option>I'm a planner / N/A</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Preferred time</label>
+              <select>
+                <option>Mornings (ET)</option>
+                <option>Afternoons (ET)</option>
+                <option>Mornings (PT)</option>
+                <option>Afternoons (PT)</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-solid" style="width: 100%; justify-content: center; height: 44px; margin-top: 8px;">
+            Request a demo
+            <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+          </button>
+
+          <p style="font-family: var(--mono); font-size: 10.5px; color: var(--muted); margin-top: 14px; text-align: center; letter-spacing: 0.04em; text-transform: uppercase;">
+            By submitting · you agree to our terms · we never share your data without consent
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SUBMIT A BRIEF ==================== -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="sect-head">
+      <div>
+        <div class="eyebrow">For planners</div>
+        <p class="lede">Free, forever. One detailed brief.</p>
+      </div>
+      <h2>Sourcing a venue? Submit a brief — <span class="soft">we'll route it</span>.</h2>
+    </div>
+
+    <div class="brief-form">
+      <h3>The brief</h3>
+      <form data-intercept data-success="Brief received · Expect 3 – 5 proposals back inside one business day">
+        <div class="form-grid">
+          <div class="field">
+            <label>Event name (internal)</label>
+            <input type="text" required>
+          </div>
+          <div class="field">
+            <label>Event type</label>
+            <select>
+              <option>Corporate offsite</option>
+              <option>Sales kick-off</option>
+              <option>Conference / summit</option>
+              <option>Association event</option>
+              <option>Wedding / social</option>
+              <option>Wellness retreat</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Preferred date</label>
+            <input type="date">
+          </div>
+          <div class="field">
+            <label>Headcount</label>
+            <input type="number" min="1" placeholder="e.g. 180" required>
+          </div>
+          <div class="field">
+            <label>Region</label>
+            <select>
+              <option value="">Open / any</option>
+              <option>Northeast</option>
+              <option>South</option>
+              <option>Midwest</option>
+              <option>West</option>
+              <option>International</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Total budget</label>
+            <select>
+              <option>Under $50K</option>
+              <option>$50K – $150K</option>
+              <option>$150K – $500K</option>
+              <option>$500K+</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label>Notes (F&B, A/V, format, room block)</label>
+            <textarea placeholder="Three-day offsite, 220 attendees, 40 breakout rooms over the second day, no plenary necessary. Plant-forward menu. Recording-quality A/V in main hall."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-solid" style="margin-top: 24px;">
+          Route this brief
+          <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site">
+  <div class="footer-grid-lines" aria-hidden="true"><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h4>Company</h4>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html#demo">Request demo</a>
+        <a href="#">Press</a>
+        <a href="#">Careers</a>
+        <p>The connective tissue of the group hospitality economy.</p>
+      </div>
+      <div class="fg-coverage">
+        <h4>Coverage</h4>
+        <div class="cov-cols">
+          <div class="cov-col">
+            <p class="cov-sub">Marketplace</p>
+            <a href="venues.html">Boutique hotels</a>
+            <a href="venues.html">Lifestyle hotels</a>
+            <a href="venues.html">Historic venues</a>
+            <a href="venues.html">Resorts</a>
+            <a href="venues.html">Industrial / loft</a>
+          </div>
+          <div class="cov-col">
+            <p class="cov-sub">Insights</p>
+            <a href="dashboard.html">Group ADR benchmarks</a>
+            <a href="dashboard.html">Closed-lost analysis</a>
+            <a href="dashboard.html">Buyer intent signals</a>
+            <a href="dashboard.html">Comp-set scoping</a>
+            <a href="dashboard.html">PMS / CRM / DMS sync</a>
+          </div>
+          <div class="cov-col">
+            <p class="cov-sub">Seminars</p>
+            <a href="seminars.html">AI in hospitality</a>
+            <a href="seminars.html">Dynamic group pricing</a>
+            <a href="seminars.html">Buyer intent</a>
+            <a href="seminars.html">Data rights</a>
+            <a href="seminars.html">Operations</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>For partners</h4>
+        <a href="contact.html">Hotel sales</a>
+        <a href="contact.html">Planner access</a>
+        <a href="#">Brief generator</a>
+        <a href="#">API docs</a>
+        <a href="#">Methodology</a>
+      </div>
+    </div>
+
+    <div class="bigmark">
+      <h2 class="word">concourse<span class="acc">.</span></h2>
+      <div class="meta">
+        <b>The operating layer for group hospitality</b>
+        142 Walker St., 4th Floor<br>
+        Tribeca · New York, NY 10013<br>
+        sales@concourse.co · (628) 222-4044
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Concourse Research, Inc.</span>
+      <span>Privacy · Terms · Security</span>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>

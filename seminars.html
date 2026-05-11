@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seminars · Concourse Research</title>
+<meta name="description" content="Working sessions on the operational shifts AI is forcing on hotels — pricing, staffing, buyer behavior, and data rights.">
+<meta name="theme-color" content="#1f4e3a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+
+<div class="gridlines" aria-hidden="true"><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+
+<nav class="top" id="topnav">
+  <div class="container">
+    <div class="row">
+      <a class="logo" href="index.html">concourse<span class="dot"></span></a>
+      <div class="nav-links">
+        <a href="venues.html">Venues</a>
+        <a href="dashboard.html">How it works</a>
+        <a href="seminars.html" class="current">Seminars</a>
+        <a href="growth.html">Growth</a>
+        <a href="pricing.html">Pricing</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="contact.html">Sign in</a>
+        <a class="btn btn-solid" href="contact.html#demo">
+          Book a demo
+          <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+        </a>
+        <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-drawer').classList.toggle('open'); document.body.style.overflow = document.querySelector('.nav-drawer').classList.contains('open') ? 'hidden' : '';">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="nav-drawer">
+  <a href="venues.html">Venues</a>
+  <a href="dashboard.html">How it works</a>
+  <a href="seminars.html">Seminars</a>
+  <a href="growth.html">Growth</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<header class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> · Research · Seminars</div>
+    <h1>The seminars hotels actually leave with <span class="soft">notes from</span>.</h1>
+    <p class="lede">Half-day working sessions, virtual briefings, and full-day workshops on the operational shifts AI is forcing on the industry — pricing, staffing, buyer behavior, and data rights. Built for operators, not panels.</p>
+  </div>
+</header>
+
+<section style="padding-top: 0;">
+  <div class="container">
+
+    <div class="venues-toolbar">
+      <span class="results-count" id="semCount"></span>
+      <div class="sort-control">
+        <label for="semFilter">Show</label>
+        <select id="semFilter">
+          <option value="all">All formats</option>
+          <option value="In person">In person</option>
+          <option value="Virtual">Virtual</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="seminar-grid" id="seminarGrid"></div>
+  </div>
+</section>
+
+<!-- ==================== THE APPROACH (How block) ==================== -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="sect-head">
+      <div>
+        <div class="eyebrow">The approach</div>
+        <p class="lede">Three sides of the same problem, in one room.</p>
+      </div>
+      <h2>The reason AI initiatives stall at hotels isn't the model — <span class="soft">it's that the right three people aren't in the room.</span></h2>
+    </div>
+
+    <div class="how">
+      <div class="step">
+        <div class="n">Roles · <b>GM</b></div>
+        <h3>Operations owners</h3>
+        <p>The people who run the property — and who have to live with whatever process the new stack imposes.</p>
+        <div class="tick">Always at the table</div>
+      </div>
+      <div class="step">
+        <div class="n">Roles · <b>Revenue</b></div>
+        <h3>P&L owners</h3>
+        <p>DOSMs, revenue strategists, group-block leads — the people who own ADR and answer for the closed-lost.</p>
+        <div class="tick">Always at the table</div>
+      </div>
+      <div class="step">
+        <div class="n">Roles · <b>IT</b></div>
+        <h3>Data + stack owners</h3>
+        <p>The team that owns the PMS, CRM, DMS, and the vendor terms — and who decides what the property can actually ship.</p>
+        <div class="tick">Always at the table</div>
+      </div>
+      <div class="step">
+        <div class="n">Roles · <b>Buy side</b></div>
+        <h3>Planners + procurement</h3>
+        <p>An invited buyer in every session. The only reliable way to find out what the market is actually filtering on this quarter.</p>
+        <div class="tick">Always at the table</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SPEAKERS (features-style) ==================== -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="sect-head">
+      <div>
+        <div class="eyebrow">Selected speakers</div>
+        <p class="lede">Operators who have moved real revenue, not professional keynoters.</p>
+      </div>
+      <h2>People who have actually shipped this work — <span class="soft">not consultants.</span></h2>
+    </div>
+
+    <div class="features">
+      <div class="feat">
+        <div>
+          <div class="big-num">01</div>
+          <h3>Jordan Reyes</h3>
+          <p>VP Revenue Strategy at Halcyon. Built the group-block dynamic-pricing model now in production across 38 properties.</p>
+        </div>
+        <div class="foot">
+          <span>Revenue</span><span class="acc">38 properties</span>
+        </div>
+      </div>
+      <div class="feat">
+        <div>
+          <div class="big-num">02</div>
+          <h3>Dr. Mira Patel</h3>
+          <p>Former CIO of Cresswell Hotel Group. Led the first AI front-of-house assistant deployment in U.S. luxury segment.</p>
+        </div>
+        <div class="foot">
+          <span>Operations</span><span class="acc">14 hotels</span>
+        </div>
+      </div>
+      <div class="feat">
+        <div>
+          <div class="big-num">03</div>
+          <h3>Aisha Okonkwo</h3>
+          <p>Founder of Field & Function, a corporate event practice managing roughly $160M of annual group spend.</p>
+        </div>
+        <div class="foot">
+          <span>Buy side</span><span class="acc">$160M / yr</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== REGISTER MODAL ==================== -->
+<div class="modal-backdrop" id="regModal">
+  <div class="modal">
+    <button class="modal-close" onclick="window.closeModal('regModal')" aria-label="Close">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 1 13 13 M13 1 1 13"/></svg>
+    </button>
+    <div class="modal-eyebrow">Reserve · Working session</div>
+    <h3 id="regTitle">Reserve a seat</h3>
+    <p class="modal-sub" id="regSub"></p>
+    <form data-intercept data-close-modal="regModal" data-success="You're confirmed · Calendar invite on the way">
+      <div class="field">
+        <label>Full name</label>
+        <input type="text" required>
+      </div>
+      <div class="field">
+        <label>Work email</label>
+        <input type="email" required>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label>Company</label>
+          <input type="text" required>
+        </div>
+        <div class="field">
+          <label>Role</label>
+          <input type="text" required>
+        </div>
+      </div>
+      <div class="field">
+        <label>What are you hoping to get out of this session?</label>
+        <textarea></textarea>
+      </div>
+      <button type="submit" class="btn btn-solid">
+        Confirm seat
+        <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- ==================== CTA FINAL ==================== -->
+<section class="cta-final">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-eyebrow-col"><div class="eyebrow">Brand awareness, profit stability</div></div>
+      <div>
+        <h2>A research practice as a <span class="soft">flywheel</span> for the platform.</h2>
+        <p class="cta-body">Every seminar produces a published brief, a private dataset, and a roomful of operators who go home and look at their stack differently. That's how this category gets rebuilt — <b>seminar by seminar</b>, deployment by deployment.</p>
+        <div class="cta-actions">
+          <div class="btns">
+            <a class="btn btn-solid" href="contact.html">
+              Bring a seminar in-house
+              <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#">Subscribe to The Brief</a>
+          </div>
+          <div class="cta-direct">
+            <span><b>research@concourse.co</b></span>
+            <a href="contact.html">Speak at a session →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site">
+  <div class="footer-grid-lines" aria-hidden="true"><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h4>Company</h4>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html#demo">Request demo</a>
+        <a href="#">Press</a>
+        <a href="#">Careers</a>
+        <p>The connective tissue of the group hospitality economy.</p>
+      </div>
+      <div class="fg-coverage">
+        <h4>Coverage</h4>
+        <div class="cov-cols">
+          <div class="cov-col">
+            <p class="cov-sub">Marketplace</p>
+            <a href="venues.html">Boutique hotels</a>
+            <a href="venues.html">Lifestyle hotels</a>
+            <a href="venues.html">Historic venues</a>
+            <a href="venues.html">Resorts</a>
+            <a href="venues.html">Industrial / loft</a>
+          </div>
+          <div class="cov-col">
+            <p class="cov-sub">Insights</p>
+            <a href="dashboard.html">Group ADR benchmarks</a>
+            <a href="dashboard.html">Closed-lost analysis</a>
+            <a href="dashboard.html">Buyer intent signals</a>
+            <a href="dashboard.html">Comp-set scoping</a>
+            <a href="dashboard.html">PMS / CRM / DMS sync</a>
+          </div>
+          <div class="cov-col">
+            <p class="cov-sub">Seminars</p>
+            <a href="seminars.html">AI in hospitality</a>
+            <a href="seminars.html">Dynamic group pricing</a>
+            <a href="seminars.html">Buyer intent</a>
+            <a href="seminars.html">Data rights</a>
+            <a href="seminars.html">Operations</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>For partners</h4>
+        <a href="contact.html">Hotel sales</a>
+        <a href="contact.html">Planner access</a>
+        <a href="#">Brief generator</a>
+        <a href="#">API docs</a>
+        <a href="#">Methodology</a>
+      </div>
+    </div>
+
+    <div class="bigmark">
+      <h2 class="word">concourse<span class="acc">.</span></h2>
+      <div class="meta">
+        <b>The operating layer for group hospitality</b>
+        142 Walker St., 4th Floor<br>
+        Tribeca · New York, NY 10013<br>
+        sales@concourse.co · (628) 222-4044
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Concourse Research, Inc.</span>
+      <span>Privacy · Terms · Security</span>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/data.js"></script>
+<script src="scripts/main.js"></script>
+<script>
+  (function () {
+    const grid = document.getElementById('seminarGrid');
+    const count = document.getElementById('semCount');
+    const filter = document.getElementById('semFilter');
+    const all = window.CONCOURSE_DATA.seminars;
+
+    function render(list) {
+      count.textContent = list.length + ' upcoming session' + (list.length === 1 ? '' : 's');
+      if (!list.length) {
+        grid.innerHTML = `<div class="no-results" style="grid-column: 1 / -1;">
+          <h3>No sessions match that filter.</h3>
+          <p>Reset the filter, or subscribe to The Brief for the next round.</p>
+        </div>`;
+        return;
+      }
+      grid.innerHTML = list.map(s => `
+        <article class="seminar-card">
+          <div class="top">
+            <span class="date">${s.date} · ${s.city}</span>
+            <span>${s.duration} · ${s.seatsLeft}/${s.seats} seats</span>
+          </div>
+          <h3>${s.title}</h3>
+          <p>${s.blurb}</p>
+          <div class="speaker">
+            <span class="speaker-avatar">${s.initials}</span>
+            <div class="speaker-info">
+              <p class="name">${s.speaker}</p>
+              <div class="role">${s.speakerRole}</div>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-solid" onclick="window.openRegister('${s.id}')">
+              Reserve a seat
+              <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+            </button>
+            <a class="btn btn-ghost" href="#">Session brief</a>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    window.openRegister = function (id) {
+      const s = all.find(x => x.id === id);
+      if (!s) return;
+      document.getElementById('regTitle').textContent = s.title;
+      document.getElementById('regSub').textContent = `${s.date} · ${s.city} · ${s.seatsLeft} seats remaining`;
+      window.openModal('regModal');
+    };
+
+    filter.addEventListener('change', () => {
+      const v = filter.value;
+      if (v === 'all') render(all);
+      else if (v === 'In person') render(all.filter(s => s.city.toLowerCase().includes('in person')));
+      else if (v === 'Virtual') render(all.filter(s => s.city.toLowerCase().includes('virtual')));
+    });
+
+    render(all);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insights · Concourse</title>
+<meta name="description" content="A working preview of the Concourse Insights dashboard hotels pay to access.">
+<meta name="theme-color" content="#1f4e3a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+
+<div class="gridlines" aria-hidden="true"><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+
+<nav class="top" id="topnav">
+  <div class="container">
+    <div class="row">
+      <a class="logo" href="index.html">concourse<span class="dot"></span></a>
+      <div class="nav-links">
+        <a href="venues.html">Venues</a>
+        <a href="dashboard.html" class="current">How it works</a>
+        <a href="seminars.html">Seminars</a>
+        <a href="growth.html">Growth</a>
+        <a href="pricing.html">Pricing</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="contact.html">Sign in</a>
+        <a class="btn btn-solid" href="contact.html#demo">
+          Book a demo
+          <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+        </a>
+        <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-drawer').classList.toggle('open'); document.body.style.overflow = document.querySelector('.nav-drawer').classList.contains('open') ? 'hidden' : '';">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="nav-drawer">
+  <a href="venues.html">Venues</a>
+  <a href="dashboard.html">How it works</a>
+  <a href="seminars.html">Seminars</a>
+  <a href="growth.html">Growth</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<header class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> · Insights · Preview</div>
+    <h1>The dashboard hotels open every Monday at <span class="soft">8:04am</span>.</h1>
+    <p class="lede">A live, interactive preview of Concourse Insights. The data below is anonymized and reshuffled — every metric, panel, and benchmark is what a paying property sees on their workspace.</p>
+  </div>
+</header>
+
+<section style="padding-top: 0;">
+  <div class="container">
+
+    <div class="dash-wrap">
+
+      <div class="dash-head">
+        <div>
+          <div class="hotel-name">Halcyon Park Hotel</div>
+          <div class="hotel-loc">Austin, TX · 312 rooms · Lifestyle / group</div>
+        </div>
+        <div class="dash-period" id="periodTabs">
+          <button data-p="7">7d</button>
+          <button data-p="30" class="active">30d</button>
+          <button data-p="90">90d</button>
+          <button data-p="ytd">YTD</button>
+        </div>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="lab">Group ADR</div>
+          <span class="val" id="kpiAdr">$284</span>
+          <div class="trend"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8 L5 3 L8 8"/></svg>+6.4% vs prior</div>
+        </div>
+        <div class="kpi">
+          <div class="lab">Qualified RFPs</div>
+          <span class="val" id="kpiRfp">147</span>
+          <div class="trend"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8 L5 3 L8 8"/></svg>+21% vs prior</div>
+        </div>
+        <div class="kpi">
+          <div class="lab">Lead → close rate</div>
+          <span class="val" id="kpiClose">24.8%</span>
+          <div class="trend down"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 2 L5 7 L8 2"/></svg>−1.2 pts vs prior</div>
+        </div>
+        <div class="kpi">
+          <div class="lab">Avg response time</div>
+          <span class="val" id="kpiResp">2h 41m</span>
+          <div class="trend"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8 L5 3 L8 8"/></svg>42m faster</div>
+        </div>
+      </div>
+
+      <div class="dash-grid">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">Group revenue vs. comp set</div>
+              <div class="panel-sub">Weekly · indexed to your set of 11 properties</div>
+            </div>
+            <div class="chart-legend">
+              <span><i style="background: var(--accent);"></i>You</span>
+              <span><i style="background: var(--accent-2);"></i>Comp set</span>
+            </div>
+          </div>
+          <div class="chart" id="barChart"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">Top markets routing inbound</div>
+              <div class="panel-sub">Source cities · 30d</div>
+            </div>
+          </div>
+          <div class="list-panel">
+            <div class="list-item">
+              <div>
+                <div class="name">San Francisco, CA</div>
+                <div class="sub">28 RFPs · corp offsite + conf.</div>
+              </div>
+              <div class="val">$1.8M</div>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="name">New York, NY</div>
+                <div class="sub">22 RFPs · sales kick-off</div>
+              </div>
+              <div class="val">$1.4M</div>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="name">Chicago, IL</div>
+                <div class="sub">18 RFPs · regional events</div>
+              </div>
+              <div class="val">$0.9M</div>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="name">Toronto, ON</div>
+                <div class="sub">11 RFPs · pharma + medtech</div>
+              </div>
+              <div class="val">$0.7M</div>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="name">Boston, MA</div>
+                <div class="sub">9 RFPs · biotech retreat</div>
+              </div>
+              <div class="val">$0.5M</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-grid">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">Where you fell out of the deal</div>
+              <div class="panel-sub">Closed-lost reasons · last 90 RFPs</div>
+            </div>
+          </div>
+          <div class="list-panel">
+            <div class="list-item">
+              <div>
+                <div class="name">Day rate (priced above shortlist)</div>
+                <div class="sub">Lost to Sutherland · The Burnham</div>
+              </div>
+              <div class="val">38%</div>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="name">Inflexible F&B minimums</div>
+                <div class="sub">Largest factor in tech vertical</div>
+              </div>
+              <div class="val">21%</div>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="name">Response time over 6h</div>
+                <div class="sub">Cost ~$1.1M in shortlisted volume</div>
+              </div>
+              <div class="val">17%</div>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="name">A/V capability mismatch</div>
+                <div class="sub">Concentrated in 250+ headcount</div>
+              </div>
+              <div class="val">14%</div>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="name">Other</div>
+                <div class="sub">Date conflicts and brand fit</div>
+              </div>
+              <div class="val">10%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">Buyer-side signals</div>
+              <div class="panel-sub">What planners are filtering on this week</div>
+            </div>
+          </div>
+          <div class="list-panel">
+            <div class="list-item">
+              <div>
+                <div class="name">"All-inclusive F&B"</div>
+                <div class="sub">+38% week-over-week</div>
+              </div>
+              <div class="val" style="color: var(--accent);">↑</div>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="name">"Outdoor + indoor flow"</div>
+                <div class="sub">+24% week-over-week</div>
+              </div>
+              <div class="val" style="color: var(--accent);">↑</div>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="name">"Sub-4h response"</div>
+                <div class="sub">+19% week-over-week</div>
+              </div>
+              <div class="val" style="color: var(--accent);">↑</div>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="name">"Sustainability cert."</div>
+                <div class="sub">+11% week-over-week</div>
+              </div>
+              <div class="val" style="color: var(--accent);">↑</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-banner">
+        <div>
+          <h4>This Monday's brief is in.</h4>
+          <p>"Why three properties in your comp set just raised group ADR — and the F&B math behind it." Eight-minute read, includes the model they used.</p>
+        </div>
+        <a href="#" class="btn btn-solid">
+          Open The Brief
+          <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <p style="text-align: center; margin-top: 24px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--muted); text-transform: uppercase;">
+      / Demo data · refreshed every load · live data ships with the workspace
+    </p>
+  </div>
+</section>
+
+<!-- ==================== HOW IT WORKS ==================== -->
+<section>
+  <div class="container">
+    <div class="sect-head">
+      <div>
+        <div class="eyebrow">How it works</div>
+        <p class="lede">One workspace per property. One-morning setup.</p>
+      </div>
+      <h2>By Monday morning, your team is looking at <span class="soft">their own data</span>, not a sales deck.</h2>
+    </div>
+
+    <div class="how">
+      <div class="step">
+        <div class="n">Step <b>01</b></div>
+        <h3>Discovery call</h3>
+        <p>30 minutes to scope your comp set, channel mix, and the closed-lost questions you want answered first.</p>
+        <div class="tick">Monday</div>
+      </div>
+      <div class="step">
+        <div class="n">Step <b>02</b></div>
+        <h3>Integration session</h3>
+        <p>One morning to wire up your PMS, CRM, and DMS. Two-way sync, no double entry.</p>
+        <div class="tick">Wednesday</div>
+      </div>
+      <div class="step">
+        <div class="n">Step <b>03</b></div>
+        <h3>QA + tuning</h3>
+        <p>We walk your team through the populated dashboard and tune the comp set to your sales reality.</p>
+        <div class="tick">Friday</div>
+      </div>
+      <div class="step">
+        <div class="n">Step <b>04</b></div>
+        <h3>Live</h3>
+        <p>Your team opens the workspace on Monday with their own data. The first Brief is in their inbox by 8:04am.</p>
+        <div class="tick">Monday + 7</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA FINAL ==================== -->
+<section class="cta-final">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-eyebrow-col"><div class="eyebrow">Built for answers, not appendices</div></div>
+      <div>
+        <h2>A workspace per property. <span class="soft">One-day setup.</span></h2>
+        <p class="cta-body">We integrate with your PMS, CRM, and DMS in a single morning. By <b>Monday</b>, your team has the dashboard above — populated with your data, indexed to your comp set.</p>
+        <div class="cta-actions">
+          <div class="btns">
+            <a class="btn btn-solid" href="contact.html#demo">
+              Book a working demo
+              <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="pricing.html">Hotel pricing</a>
+          </div>
+          <div class="cta-direct">
+            <span><b>sales@concourse.co</b></span>
+            <a href="contact.html">Start a 30-day trial →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site">
+  <div class="footer-grid-lines" aria-hidden="true"><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h4>Company</h4>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html#demo">Request demo</a>
+        <a href="#">Press</a>
+        <a href="#">Careers</a>
+        <p>The connective tissue of the group hospitality economy.</p>
+      </div>
+      <div class="fg-coverage">
+        <h4>Coverage</h4>
+        <div class="cov-cols">
+          <div class="cov-col">
+            <p class="cov-sub">Marketplace</p>
+            <a href="venues.html">Boutique hotels</a>
+            <a href="venues.html">Lifestyle hotels</a>
+            <a href="venues.html">Historic venues</a>
+            <a href="venues.html">Resorts</a>
+            <a href="venues.html">Industrial / loft</a>
+          </div>
+          <div class="cov-col">
+            <p class="cov-sub">Insights</p>
+            <a href="dashboard.html">Group ADR benchmarks</a>
+            <a href="dashboard.html">Closed-lost analysis</a>
+            <a href="dashboard.html">Buyer intent signals</a>
+            <a href="dashboard.html">Comp-set scoping</a>
+            <a href="dashboard.html">PMS / CRM / DMS sync</a>
+          </div>
+          <div class="cov-col">
+            <p class="cov-sub">Seminars</p>
+            <a href="seminars.html">AI in hospitality</a>
+            <a href="seminars.html">Dynamic group pricing</a>
+            <a href="seminars.html">Buyer intent</a>
+            <a href="seminars.html">Data rights</a>
+            <a href="seminars.html">Operations</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>For partners</h4>
+        <a href="contact.html">Hotel sales</a>
+        <a href="contact.html">Planner access</a>
+        <a href="#">Brief generator</a>
+        <a href="#">API docs</a>
+        <a href="#">Methodology</a>
+      </div>
+    </div>
+
+    <div class="bigmark">
+      <h2 class="word">concourse<span class="acc">.</span></h2>
+      <div class="meta">
+        <b>The operating layer for group hospitality</b>
+        142 Walker St., 4th Floor<br>
+        Tribeca · New York, NY 10013<br>
+        sales@concourse.co · (628) 222-4044
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Concourse Research, Inc.</span>
+      <span>Privacy · Terms · Security</span>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/main.js"></script>
+<script>
+  (function () {
+    const weeks = ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8'];
+    const data = {
+      '7':   { adr: '$281', rfp: '34',   close: '23.1%', resp: '3h 02m', you: [62, 70, 64, 78, 71, 84, 90, 92], comp: [70, 68, 66, 71, 73, 75, 76, 80] },
+      '30':  { adr: '$284', rfp: '147',  close: '24.8%', resp: '2h 41m', you: [60, 64, 70, 75, 78, 82, 86, 90], comp: [65, 66, 68, 70, 72, 74, 75, 77] },
+      '90':  { adr: '$278', rfp: '432',  close: '23.4%', resp: '3h 11m', you: [58, 62, 64, 68, 72, 78, 81, 84], comp: [64, 65, 66, 68, 70, 72, 74, 76] },
+      'ytd': { adr: '$271', rfp: '1,084', close: '22.6%', resp: '3h 28m', you: [55, 58, 62, 64, 68, 72, 76, 80], comp: [62, 63, 65, 67, 69, 71, 73, 75] }
+    };
+
+    function renderChart(period) {
+      const d = data[period];
+      const chart = document.getElementById('barChart');
+      chart.innerHTML = weeks.map((w, i) => `
+        <div class="bar-col">
+          <div class="bar-pair">
+            <div><div class="bar-fill" style="height: ${d.you[i]}%;"></div></div>
+            <div><div class="bar-fill alt" style="height: ${d.comp[i]}%;"></div></div>
+          </div>
+          <div class="bar-label">${w}</div>
+        </div>
+      `).join('');
+    }
+
+    function setPeriod(p) {
+      document.querySelectorAll('#periodTabs button').forEach(b =>
+        b.classList.toggle('active', b.dataset.p === p)
+      );
+      const d = data[p];
+      document.getElementById('kpiAdr').textContent = d.adr;
+      document.getElementById('kpiRfp').textContent = d.rfp;
+      document.getElementById('kpiClose').textContent = d.close;
+      document.getElementById('kpiResp').textContent = d.resp;
+      renderChart(p);
+    }
+
+    document.querySelectorAll('#periodTabs button').forEach(b =>
+      b.addEventListener('click', () => setPeriod(b.dataset.p))
+    );
+
+    setPeriod('30');
+  })();
+</script>
+</body>
+</html>
