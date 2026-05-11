@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Growth · Concourse</title>
-<meta name="description" content="A live watchlist of where group business is moving — 10-year forecasts, confirmed conference pipeline, and a tourism news feed across 14 markets.">
+<meta name="description" content="A live watchlist of where group business is moving - 10-year forecasts, confirmed conference pipeline, and a tourism news feed across 14 markets.">
 <meta name="theme-color" content="#1f4e3a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +27,8 @@
         <a href="growth.html" class="current">Growth</a>
         </div>
       <div class="nav-cta">
-        <a class="btn btn-ghost" href="contact.html">Sign in</a>
-        <a class="btn btn-solid" href="contact.html#demo">
+        <a target="_blank" class="btn btn-ghost" href="contact.html">Sign in</a>
+        <a target="_blank" class="btn btn-solid" href="contact.html#demo">
           Book a demo
           <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
         </a>
@@ -51,7 +51,7 @@
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a> · Growth · Watchlist</div>
     <h1>Where group business is <span class="soft">moving</span>.</h1>
-    <p class="lede">A live read across fourteen markets — 10-year forecasts on group room nights, confirmed conference pipeline through 2027, and the development and tourism signals shaping each region. Updated weekly from the network.</p>
+    <p class="lede">A live read across fourteen markets - 10-year forecasts on group room nights, confirmed conference pipeline through 2027, and the development and tourism signals shaping each region. Updated weekly from the network.</p>
   </div>
 </header>
 
@@ -102,7 +102,7 @@
         <div class="eyebrow" id="marketEyebrow">Selected · Las Vegas, NV</div>
         <p class="lede" id="marketSummary">A mature group market at scale.</p>
       </div>
-      <h2 id="marketHeadline">10-year projection — <span class="soft">group room nights and conference pipeline.</span></h2>
+      <h2 id="marketHeadline">10-year projection - <span class="soft">group room nights and conference pipeline.</span></h2>
     </div>
 
     <div class="market-detail" id="marketDetail">
@@ -175,7 +175,7 @@
     <div class="sect-head">
       <div>
         <div class="eyebrow">News feed · The Brief</div>
-        <p class="lede">Tourism, development, conference wins, and leisure trends — pulled from the network this week.</p>
+        <p class="lede">Tourism, development, conference wins, and leisure trends - pulled from the network this week.</p>
       </div>
       <h2>What we're <span class="soft">watching this week.</span></h2>
     </div>
@@ -191,18 +191,18 @@
       <div class="cta-eyebrow-col"><div class="eyebrow">Get the Brief weekly</div></div>
       <div>
         <h2>This is the <span class="soft">public read.</span> The workspace reads deeper.</h2>
-        <p class="cta-body">Every market on the watchlist has a private workspace behind it — comp-set scoping, RFP routing, and closed-lost analysis on top of the public forecast. <b>Hotels</b> get it on Insights; <b>planners</b> route briefs against it for free.</p>
+        <p class="cta-body">Every market on the watchlist has a private workspace behind it - comp-set scoping, RFP routing, and closed-lost analysis on top of the public forecast. <b>Hotels</b> get it on Insights; <b>planners</b> route briefs against it for free.</p>
         <div class="cta-actions">
           <div class="btns">
-            <a class="btn btn-solid" href="contact.html#demo">
+            <a target="_blank" class="btn btn-solid" href="contact.html#demo">
               Open a workspace
               <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
             </a>
-            <a class="btn btn-ghost" href="dashboard.html">Preview Insights</a>
+            <a target="_blank" class="btn btn-ghost" href="dashboard.html">Preview Insights</a>
           </div>
           <div class="cta-direct">
             <span><b>research@concourse.co</b></span>
-            <a href="subscribe.html">Subscribe to The Brief →</a>
+            <a href="subscribe.html" target="_blank">Subscribe to The Brief →</a>
           </div>
         </div>
       </div>
@@ -219,8 +219,8 @@
         <h4>Company</h4>
         <a href="contact.html">Contact</a>
         <a href="contact.html#demo">Request demo</a>
-        <a href="press.html">Press</a>
-        <a href="careers.html">Careers</a>
+        <a href="press.html" target="_blank">Press</a>
+        <a href="careers.html" target="_blank">Careers</a>
         <p>The connective tissue of the group hospitality economy.</p>
       </div>
       <div class="fg-coverage">
@@ -256,9 +256,9 @@
         <h4>For partners</h4>
         <a href="contact.html">Hotel sales</a>
         <a href="contact.html">Planner access</a>
-        <a href="brief.html">Brief generator</a>
-        <a href="api.html">API docs</a>
-        <a href="methodology.html">Methodology</a>
+        <a href="brief.html" target="_blank">Brief generator</a>
+        <a href="api.html" target="_blank">API docs</a>
+        <a href="methodology.html" target="_blank">Methodology</a>
       </div>
     </div>
 
@@ -361,7 +361,7 @@
       // header
       document.getElementById('marketEyebrow').textContent = 'Selected · ' + m.name + ', ' + m.state;
       document.getElementById('marketSummary').textContent = m.summary;
-      document.getElementById('marketHeadline').innerHTML = m.name + ' — <span class="soft">10-year group room-night projection.</span>';
+      document.getElementById('marketHeadline').innerHTML = m.name + ' - <span class="soft">10-year group room-night projection.</span>';
 
       // KPIs
       document.getElementById('kpiADR').textContent = '$' + m.currentADR;

@@ -27,8 +27,8 @@
         <a href="growth.html">Growth</a>
         </div>
       <div class="nav-cta">
-        <a class="btn btn-ghost" href="contact.html">Sign in</a>
-        <a class="btn btn-solid" href="contact.html#demo">
+        <a target="_blank" class="btn btn-ghost" href="contact.html">Sign in</a>
+        <a target="_blank" class="btn btn-solid" href="contact.html#demo">
           Book a demo
           <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
         </a>
@@ -51,7 +51,7 @@
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a> · Marketplace</div>
     <h1>Venues that respond. Calendars that are <span class="soft">real</span>.</h1>
-    <p class="lede">Search 2,800+ verified group properties across thirty-one metros. Free for planners. Every listing PMS-linked, every response time tracked, every relationship direct — no resellers.</p>
+    <p class="lede">Search 2,800+ verified group properties across thirty-one metros. Free for planners. Every listing PMS-linked, every response time tracked, every relationship direct - no resellers.</p>
   </div>
 </header>
 
@@ -106,8 +106,8 @@
         <select id="sort" onchange="window.applyFilters()">
           <option value="recommended">Recommended</option>
           <option value="rating">Highest rated</option>
-          <option value="price-low">Day rate — low to high</option>
-          <option value="price-high">Day rate — high to low</option>
+          <option value="price-low">Day rate - low to high</option>
+          <option value="price-high">Day rate - high to low</option>
           <option value="capacity">Capacity</option>
         </select>
       </div>
@@ -164,14 +164,14 @@
       <div class="cta-eyebrow-col"><div class="eyebrow">Can't find it</div></div>
       <div>
         <h2>Submit the brief. <span class="soft">We'll route it.</span></h2>
-        <p class="cta-body">Send one detailed brief. A <b>named partner</b> reviews the file, builds a shortlist of three to five venues, and gets proposals back — usually inside one business day.</p>
+        <p class="cta-body">Send one detailed brief. A <b>named partner</b> reviews the file, builds a shortlist of three to five venues, and gets proposals back - usually inside one business day.</p>
         <div class="cta-actions">
           <div class="btns">
-            <a class="btn btn-solid" href="contact.html">
+            <a target="_blank" class="btn btn-solid" href="contact.html">
               Submit a brief
               <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
             </a>
-            <a class="btn btn-ghost" href="contact.html#demo">Talk to sales</a>
+            <a target="_blank" class="btn btn-ghost" href="contact.html#demo">Talk to sales</a>
           </div>
           <div class="cta-direct">
             <span><b>planners@concourse.co</b></span>
@@ -192,8 +192,8 @@
         <h4>Company</h4>
         <a href="contact.html">Contact</a>
         <a href="contact.html#demo">Request demo</a>
-        <a href="press.html">Press</a>
-        <a href="careers.html">Careers</a>
+        <a href="press.html" target="_blank">Press</a>
+        <a href="careers.html" target="_blank">Careers</a>
         <p>The connective tissue of the group hospitality economy.</p>
       </div>
       <div class="fg-coverage">
@@ -229,9 +229,9 @@
         <h4>For partners</h4>
         <a href="contact.html">Hotel sales</a>
         <a href="contact.html">Planner access</a>
-        <a href="brief.html">Brief generator</a>
-        <a href="api.html">API docs</a>
-        <a href="methodology.html">Methodology</a>
+        <a href="brief.html" target="_blank">Brief generator</a>
+        <a href="api.html" target="_blank">API docs</a>
+        <a href="methodology.html" target="_blank">Methodology</a>
       </div>
     </div>
 
@@ -267,7 +267,7 @@
       if (!list.length) {
         grid.innerHTML = `<div class="no-results">
           <h3>No venues match those filters.</h3>
-          <p>Widen the region or capacity — or submit a brief and we'll route it manually.</p>
+          <p>Widen the region or capacity - or submit a brief and we'll route it manually.</p>
         </div>`;
         return;
       }

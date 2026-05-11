@@ -1,4 +1,4 @@
-// Concourse — shared site scripts
+// Concourse - shared site scripts
 
 (function () {
   'use strict';

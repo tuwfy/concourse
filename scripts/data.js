@@ -1,4 +1,4 @@
-// Concourse — mock data layer
+// Concourse - mock data layer
 // (In a real product this would live behind an API.)
 
 window.CONCOURSE_DATA = {
@@ -179,14 +179,14 @@ window.CONCOURSE_DATA = {
       title: 'AI in Hospitality: From Pilot to P&L',
       date: 'Jun 18, 2026',
       iso: '2026-06-18',
-      city: 'Chicago — In person',
+      city: 'Chicago - In person',
       duration: '½ day',
       seats: 80,
       seatsLeft: 23,
       blurb: 'A working session on how mid-market hotel groups are translating AI experiments into measurable revenue, not press releases.',
-      speaker: 'Dr. Mira Patel',
-      speakerRole: 'Former CIO, Cresswell Hotel Group',
-      initials: 'MP',
+      speaker: 'Industry Expert',
+      speakerRole: 'Guest Speaker',
+      initials: 'IE',
       image: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1200&q=70'
     },
     {
@@ -199,9 +199,9 @@ window.CONCOURSE_DATA = {
       seats: 300,
       seatsLeft: 142,
       blurb: 'Walk through three live revenue management deployments, what broke, and how forecast accuracy moved from ±18% to ±5%.',
-      speaker: 'Jordan Reyes',
-      speakerRole: 'VP Revenue Strategy, Halcyon',
-      initials: 'JR',
+      speaker: 'Industry Expert',
+      speakerRole: 'Guest Speaker',
+      initials: 'IE',
       image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=70'
     },
     {
@@ -209,14 +209,14 @@ window.CONCOURSE_DATA = {
       title: 'The Planner Brief: Reading Buyer Intent in 2026',
       date: 'Aug 22, 2026',
       iso: '2026-08-22',
-      city: 'Atlanta — In person',
+      city: 'Atlanta - In person',
       duration: 'Full day',
       seats: 60,
       seatsLeft: 9,
       blurb: 'Sales directors and DOSMs review eighteen months of anonymized RFP data and the early signals that predict close vs. churn.',
-      speaker: 'Aisha Okonkwo',
-      speakerRole: 'Founder, Field & Function',
-      initials: 'AO',
+      speaker: 'Industry Expert',
+      speakerRole: 'Guest Speaker',
+      initials: 'IE',
       image: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=70'
     },
     {
@@ -228,10 +228,10 @@ window.CONCOURSE_DATA = {
       duration: '2 hr',
       seats: 500,
       seatsLeft: 318,
-      blurb: 'A frank conversation with three GMs about workflow redesign, retention, and the work AI hasn\'t replaced — and probably won\'t.',
-      speaker: 'Marcus Vela',
-      speakerRole: 'Principal, Vela Operations',
-      initials: 'MV',
+      blurb: 'A frank conversation with three GMs about workflow redesign, retention, and the work AI hasn\'t replaced - and probably won\'t.',
+      speaker: 'Industry Expert',
+      speakerRole: 'Guest Speaker',
+      initials: 'IE',
       image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=70'
     },
     {
@@ -239,14 +239,14 @@ window.CONCOURSE_DATA = {
       title: 'Data Rights for Hotels: Owning the Guest Signal',
       date: 'Oct 02, 2026',
       iso: '2026-10-02',
-      city: 'New York — In person',
+      city: 'New York - In person',
       duration: '½ day',
       seats: 90,
       seatsLeft: 41,
       blurb: 'A practical legal-and-product workshop on first-party data, vendor terms, and what to negotiate before signing the next AI add-on.',
-      speaker: 'Helena Bauer',
-      speakerRole: 'Partner, Bauer & Toft',
-      initials: 'HB',
+      speaker: 'Industry Expert',
+      speakerRole: 'Guest Speaker',
+      initials: 'IE',
       image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=70'
     },
     {
@@ -254,14 +254,14 @@ window.CONCOURSE_DATA = {
       title: 'The Quiet Revenue Channels: Long-Lead Group & Wellness',
       date: 'Nov 14, 2026',
       iso: '2026-11-14',
-      city: 'Phoenix — In person',
+      city: 'Phoenix - In person',
       duration: 'Full day',
       seats: 120,
       seatsLeft: 67,
-      blurb: 'Where group volume is moving as corporate footprints contract — and how three resorts replaced lost demand with verticals that don\'t flinch in a downturn.',
-      speaker: 'Tomás Reyna',
-      speakerRole: 'Founder, Concourse',
-      initials: 'TR',
+      blurb: 'Where group volume is moving as corporate footprints contract - and how three resorts replaced lost demand with verticals that don\'t flinch in a downturn.',
+      speaker: 'Industry Expert',
+      speakerRole: 'Guest Speaker',
+      initials: 'IE',
       image: 'https://images.unsplash.com/photo-1542665952-14513db15293?auto=format&fit=crop&w=1200&q=70'
     }
   ],
@@ -271,19 +271,19 @@ window.CONCOURSE_DATA = {
       cat: 'Field report',
       title: 'Why the group RFP cycle is 22 days shorter than it was in 2023',
       excerpt: 'Anonymized data from 4,100 planner-side searches shows where the time was cut, and what closed faster as a result.',
-      meta: 'Q1 2026 — 8 min read'
+      meta: 'Q1 2026 - 8 min read'
     },
     {
       cat: 'Playbook',
       title: 'A revenue manager\'s prompt library that actually moves ADR',
       excerpt: 'Eleven prompts, six guardrails, and the one mistake that cost a 220-room property $84K last summer.',
-      meta: 'Updated Apr 2026 — 12 min read'
+      meta: 'Updated Apr 2026 - 12 min read'
     },
     {
       cat: 'Data',
       title: 'Where group business is migrating: a 36-month heat map',
       excerpt: 'The cities gaining share, the second-tier markets that quietly tripled inbound corporate, and a forecast through 2027.',
-      meta: 'Mar 2026 — Data brief'
+      meta: 'Mar 2026 - Data brief'
     }
   ],
 
@@ -565,7 +565,7 @@ window.CONCOURSE_DATA = {
 
   news: [
     { date: 'May 8, 2026', cat: 'development', catLabel: 'Development', market: 'Las Vegas', head: 'Mandalay Bay completes $400M renovation; Q3 group rebookings up 41% week-on-week.' },
-    { date: 'May 4, 2026', cat: 'conference',  catLabel: 'Conference',  market: 'Orange / Osceola', head: 'Orlando wins 2028 InfoComm bid — 65,000 attendees, six-night room block.' },
+    { date: 'May 4, 2026', cat: 'conference',  catLabel: 'Conference',  market: 'Orange / Osceola', head: 'Orlando wins 2028 InfoComm bid - 65,000 attendees, six-night room block.' },
     { date: 'May 2, 2026', cat: 'development', catLabel: 'Development', market: 'Austin', head: 'Austin DMO opens RFP for second convention hall expansion ahead of SXSW 2028.' },
     { date: 'Apr 28, 2026', cat: 'leisure',    catLabel: 'Leisure',     market: 'Hamptons', head: 'Hamptons summer 2026 weddings book nine months earlier than 2024.' },
     { date: 'Apr 22, 2026', cat: 'development', catLabel: 'Development', market: 'Napa Valley', head: 'Napa Valley adds 320 luxury keys across three properties through 2027.' },
