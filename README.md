@@ -8,7 +8,7 @@ Concourse benchmarks a hotel against its **real competitive set** — occupancy,
 STR index metrics (MPI · ARI · RGI) — so revenue, sales, and ownership stop arguing over screenshots
 and start making the call. Live today across **30 real Orlando, FL hotels**.
 
-[![Status](https://img.shields.io/badge/status-live%20demo-1f4e3a)](https://github.com/tuwfy/concourse)
+[![Status](https://img.shields.io/badge/status-live%20demo-1f4e3a)](https://github.com/tylrcc/concourse)
 [![Build](https://img.shields.io/badge/build-none%20·%20static-a67b2e)](#tech)
 [![Made with](https://img.shields.io/badge/HTML·CSS·JS-no%20framework-111111)](#tech)
 [![License](https://img.shields.io/badge/license-MIT-1f4e3a)](LICENSE)
@@ -104,7 +104,7 @@ Just open `benchmark.html` — everything works on `file://`.
 For clean URLs:
 
 ```sh
-git clone https://github.com/tuwfy/concourse.git
+git clone https://github.com/tylrcc/concourse.git
 cd concourse
 python3 -m http.server 8000
 # open http://localhost:8000/benchmark.html
