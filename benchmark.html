@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STAR Benchmark · Concourse</title>
+<meta name="description" content="A live competitive benchmarking workspace. Pick a hotel, see its comp set's occupancy, ADR, RevPAR and the STR index metrics (MPI / ARI / RGI) — built on real Orlando, FL properties.">
+<meta name="theme-color" content="#1f4e3a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+
+<div class="gridlines" aria-hidden="true"><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+
+<nav class="top" id="topnav">
+  <div class="container">
+    <div class="row">
+      <a class="logo" href="index.html">concourse<span class="dot"></span></a>
+      <div class="nav-links">
+        <a href="benchmark.html" class="current">Benchmark</a>
+        <a href="growth.html">Markets</a>
+        <a href="venues.html">Venues</a>
+        <a href="seminars.html">Seminars</a>
+      </div>
+      <div class="nav-cta">
+        <a target="_blank" class="btn btn-ghost" href="contact.html">Get appointed</a>
+        <a target="_blank" class="btn btn-solid" href="contact.html#demo">
+          Book a demo
+          <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+        </a>
+        <button type="button" class="btn nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span class="bl"></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Site menu">
+  <h5>Pages</h5>
+  <a href="benchmark.html">Benchmark</a>
+  <a href="growth.html">Markets</a>
+  <a href="venues.html">Venues</a>
+  <a href="seminars.html">Seminars</a>
+  <h5>Company</h5>
+  <a href="contact.html">Contact</a>
+  <a href="methodology.html">Methodology</a>
+  <a href="press.html">Press</a>
+  <a href="careers.html">Careers</a>
+  <div class="mm-ctas">
+    <a class="btn btn-ghost" href="contact.html">Get appointed</a>
+    <a class="btn btn-solid" href="contact.html#demo">Book a demo</a>
+  </div>
+</div>
+
+<header class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> · Benchmark · Orlando, FL</div>
+    <h1>Every competitor, every metric, <span class="soft">one STAR report.</span></h1>
+    <p class="lede">Pick any property below. Concourse pulls its competitive set, indexes occupancy, ADR and RevPAR against the market, and shows exactly where it wins and loses — the same view a revenue manager opens to set next week's rate. Live across <b>30 real Orlando hotels</b>.</p>
+  </div>
+</header>
+
+<section style="padding-top: 0;">
+  <div class="container">
+
+    <!-- Controls -->
+    <div class="star-controls">
+      <div class="field star-field">
+        <label for="subjectSelect">Subject property</label>
+        <select id="subjectSelect" aria-label="Choose a hotel to benchmark"></select>
+      </div>
+      <div class="star-controls-meta">
+        <div class="scm-item"><span class="lab">Market</span><span class="val">Orlando, FL</span></div>
+        <div class="scm-item"><span class="lab">Period</span><span class="val">Trailing 12 mo · 2025–26</span></div>
+        <button class="btn btn-solid" id="exportBtn">
+          Export STAR report
+          <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="dash-wrap" id="starWorkspace">
+
+      <div class="dash-head">
+        <div>
+          <div class="hotel-name" id="subjectName">—</div>
+          <div class="hotel-loc" id="subjectMeta">—</div>
+        </div>
+        <div class="comp-badge">
+          <span class="cb-lab">Competitive set</span>
+          <span class="cb-val" id="compName">—</span>
+        </div>
+      </div>
+
+      <!-- KPI row -->
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="lab">Occupancy</div>
+          <span class="val" id="kOcc">—</span>
+          <div class="trend" id="kOccYoY">—</div>
+        </div>
+        <div class="kpi">
+          <div class="lab">ADR</div>
+          <span class="val" id="kAdr">—</span>
+          <div class="trend" id="kAdrYoY">—</div>
+        </div>
+        <div class="kpi">
+          <div class="lab">RevPAR</div>
+          <span class="val" id="kRevpar">—</span>
+          <div class="trend" id="kRevparYoY">—</div>
+        </div>
+        <div class="kpi">
+          <div class="lab">Comp-set position</div>
+          <span class="val rank-val" id="kRank">—</span>
+          <div class="trend rank-sub" id="kRankSub">—</div>
+        </div>
+      </div>
+
+      <!-- Index cards -->
+      <div class="idx-grid">
+        <div class="idx-card">
+          <div class="idx-head"><span class="idx-name">MPI</span><span class="idx-full">Market Penetration · occupancy</span></div>
+          <div class="idx-val" id="mpi">—</div>
+          <div class="idx-scale"><span>70</span><span class="par">100 par</span><span>130</span><div class="idx-track"><div class="idx-marker" id="mpiBar"></div></div></div>
+          <div class="idx-rank" id="mpiRank">—</div>
+        </div>
+        <div class="idx-card">
+          <div class="idx-head"><span class="idx-name">ARI</span><span class="idx-full">Average Rate · ADR</span></div>
+          <div class="idx-val" id="ari">—</div>
+          <div class="idx-scale"><span>70</span><span class="par">100 par</span><span>130</span><div class="idx-track"><div class="idx-marker" id="ariBar"></div></div></div>
+          <div class="idx-rank" id="ariRank">—</div>
+        </div>
+        <div class="idx-card">
+          <div class="idx-head"><span class="idx-name">RGI</span><span class="idx-full">Revenue Generation · RevPAR</span></div>
+          <div class="idx-val" id="rgi">—</div>
+          <div class="idx-scale"><span>70</span><span class="par">100 par</span><span>130</span><div class="idx-track"><div class="idx-marker" id="rgiBar"></div></div></div>
+          <div class="idx-rank" id="rgiRank">—</div>
+        </div>
+      </div>
+
+      <!-- Trend + table -->
+      <div class="dash-grid star-grid">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">Performance vs. comp set</div>
+              <div class="panel-sub" id="trendCaption">—</div>
+            </div>
+            <div class="dash-period" id="trendTabs">
+              <button data-metric="occ">Occ</button>
+              <button data-metric="adr">ADR</button>
+              <button data-metric="revpar" class="active">RevPAR</button>
+            </div>
+          </div>
+          <div class="chart-legend trend-legend">
+            <span><i style="background: var(--accent);"></i>This property</span>
+            <span><i style="background: var(--accent-2);"></i>Comp-set aggregate</span>
+          </div>
+          <div id="trendChart" class="trend-chart"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">The competitive set</div>
+              <div class="panel-sub">Ranked by RevPAR · RGI vs. set</div>
+            </div>
+          </div>
+          <div class="comp-table-wrap">
+            <table class="comp-table">
+              <thead>
+                <tr><th>#</th><th>Property</th><th>Occ</th><th>ADR</th><th>RevPAR</th><th>RGI</th></tr>
+              </thead>
+              <tbody id="compBody"></tbody>
+            </table>
+          </div>
+          <div class="comp-footnote" id="compFootnote">—</div>
+        </div>
+      </div>
+
+      <div class="dash-banner">
+        <div>
+          <h4>Read it like a revenue manager.</h4>
+          <p>An index of <b>100</b> means you're at parity with your comp set. Above 100 you're capturing more than your fair share; below 100 you're leaving it on the table. RGI is the one that pays the bills — it folds occupancy and rate into a single fair-share number.</p>
+        </div>
+        <a href="methodology.html" target="_blank" class="btn btn-solid">
+          How the math works
+          <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <p class="data-note">
+      / Representative benchmarking data modeled on public Orlando market patterns · not licensed STR/CoStar STAR data · live property feeds ship with the workspace
+    </p>
+  </div>
+</section>
+
+<!-- HOW TO READ -->
+<section>
+  <div class="container">
+    <div class="sect-head">
+      <div>
+        <div class="eyebrow">How to read it</div>
+        <p class="lede">Three indices, one comp set, zero spreadsheets. Everything indexes to 100.</p>
+      </div>
+      <h2>The three numbers that decide <span class="soft">next week's rate</span>.</h2>
+    </div>
+
+    <div class="how">
+      <div class="step">
+        <div class="n">Index <b>01</b></div>
+        <h3>MPI · occupancy</h3>
+        <p>Your occupancy divided by the comp set's, times 100. Tells you whether you're filling rooms faster or slower than your competitors.</p>
+        <div class="tick">Fair share of demand</div>
+      </div>
+      <div class="step">
+        <div class="n">Index <b>02</b></div>
+        <h3>ARI · rate</h3>
+        <p>Your ADR against the set's ADR. A high ARI with a low MPI usually means you're priced ahead of the market and giving up nights.</p>
+        <div class="tick">Pricing power</div>
+      </div>
+      <div class="step">
+        <div class="n">Index <b>03</b></div>
+        <h3>RGI · RevPAR</h3>
+        <p>RevPAR vs. the set — the bottom line. It blends occupancy and rate into one fair-share figure. This is the number owners track.</p>
+        <div class="tick">The scoreboard</div>
+      </div>
+      <div class="step">
+        <div class="n">Step <b>04</b></div>
+        <h3>Comp set</h3>
+        <p>Indices are only as good as the set you measure against. Concourse tunes each property's comp set to its true competitors, the way STR does.</p>
+        <div class="tick">Tuned per property</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-final">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-eyebrow-col"><div class="eyebrow">Your data, your set</div></div>
+      <div>
+        <h2>Connect your PMS. <span class="soft">See your real numbers.</span></h2>
+        <p class="cta-body">This workspace is running on modeled Orlando data so you can feel the product before you sign anything. Wire up your PMS and STR subscription and the same view fills with <b>your</b> occupancy, ADR, RevPAR, and a comp set tuned to the hotels you actually compete with.</p>
+        <div class="cta-actions">
+          <div class="btns">
+            <a target="_blank" class="btn btn-solid" href="contact.html#demo">
+              Book a working demo
+              <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+            </a>
+            <a target="_blank" class="btn btn-ghost" href="growth.html">See market forecasts</a>
+          </div>
+          <div class="cta-direct">
+            <span><b>sales@concourse.co</b></span>
+            <a href="contact.html">Start a 30-day trial →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="footer-grid-lines" aria-hidden="true"><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h4>Company</h4>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html#demo">Request demo</a>
+        <a href="press.html" target="_blank">Press</a>
+        <a href="careers.html" target="_blank">Careers</a>
+        <p>Competitive intelligence and STAR benchmarking for hotels and the companies that book them.</p>
+      </div>
+      <div class="fg-coverage">
+        <h4>Coverage</h4>
+        <div class="cov-cols">
+          <div class="cov-col">
+            <p class="cov-sub">Benchmark</p>
+            <a href="benchmark.html">Occupancy / ADR / RevPAR</a>
+            <a href="benchmark.html">MPI · ARI · RGI indices</a>
+            <a href="benchmark.html">Comp-set ranking</a>
+            <a href="benchmark.html">12-month trends</a>
+            <a href="methodology.html">Methodology</a>
+          </div>
+          <div class="cov-col">
+            <p class="cov-sub">Markets</p>
+            <a href="growth.html">Orlando &amp; Central FL</a>
+            <a href="growth.html">10-year forecasts</a>
+            <a href="growth.html">Conference pipeline</a>
+            <a href="growth.html">Development watch</a>
+            <a href="growth.html">Market news</a>
+          </div>
+          <div class="cov-col">
+            <p class="cov-sub">Seminars</p>
+            <a href="seminars.html">Revenue management</a>
+            <a href="seminars.html">Dynamic pricing</a>
+            <a href="seminars.html">AI in hospitality</a>
+            <a href="seminars.html">Data rights</a>
+            <a href="seminars.html">Operations</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>For partners</h4>
+        <a href="contact.html">Hotel sales</a>
+        <a href="contact.html">Planner access</a>
+        <a href="api.html" target="_blank">API docs</a>
+        <a href="methodology.html" target="_blank">Methodology</a>
+        <a href="press.html" target="_blank">Press kit</a>
+      </div>
+    </div>
+
+    <div class="bigmark">
+      <h2 class="word">concourse<span class="acc">.</span></h2>
+      <div class="meta">
+        <b>Competitive intelligence for hotels</b>
+        142 Walker St., 4th Floor<br>
+        Tribeca · New York, NY 10013<br>
+        sales@concourse.co · (628) 222-4044
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Concourse Research, Inc.</span>
+      <span>Privacy · Terms · Security</span>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/main.js"></script>
+<script src="scripts/star.js"></script>
+</body>
+</html>

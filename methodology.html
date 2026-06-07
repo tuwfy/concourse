@@ -19,11 +19,11 @@
   <div class="container">
     <div class="row">
       <a class="logo" href="index.html">concourse<span class="dot"></span></a>
-      <div class="nav-links">
+            <div class="nav-links">
+        <a href="benchmark.html">Benchmark</a>
+        <a href="growth.html">Markets</a>
         <a href="venues.html">Venues</a>
-        <a href="dashboard.html">How it works</a>
         <a href="seminars.html">Seminars</a>
-        <a href="growth.html">Growth</a>
       </div>
       <div class="nav-cta">
         <a target="_blank" class="btn btn-ghost" href="contact.html">Get appointed</a>
@@ -38,19 +38,79 @@
 
 <header class="page-head">
   <div class="container">
-    <div class="breadcrumb"><a href="index.html">Home</a> · Data</div>
-    <h1>Methodology</h1>
-    <p class="lede">Our insights are derived from first-party closed-lost and benchmarking data across our network of 2,840+ properties.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a> · Methodology</div>
+    <h1>How the <span class="soft">benchmark math</span> works.</h1>
+    <p class="lede">Concourse follows the same definitions a STR/CoStar STAR report uses, so the numbers map cleanly onto the reports your revenue team already reads. Here is exactly how every metric on the benchmark is calculated — and where the Orlando demo data comes from.</p>
   </div>
 </header>
 
 <section style="padding-top: 0;">
   <div class="container">
-    <div style="background: var(--paper-2); padding: 40px; border: 1px solid var(--line); border-radius: 4px;">
-      <h3 style="font-family: var(--serif); font-size: 24px; margin-top:0;">Details</h3>
-      <p style="font-family: var(--sans); font-size: 16px; line-height: 1.6; color: var(--ink-2);">We aggregate and anonymize weekly booking data to provide real-time market insights. Our data science team uses this to project 10-year growth forecasts and benchmark group ADRs with high precision.</p>
-      <a target="_blank" href="index.html" class="btn btn-solid" style="margin-top: 20px;">Return Home</a>
+
+    <div class="sect-head sect-head--wide">
+      <div class="eyebrow">The core three</div>
+      <h2>Occupancy, ADR, RevPAR.</h2>
+      <p class="lede">The three numbers everything else is built on.</p>
     </div>
+
+    <div class="spec-card" style="margin-top:0; grid-template-columns: repeat(3, 1fr);">
+      <div class="cell">
+        <div class="k">Occupancy</div>
+        <div class="v">Rooms sold ÷ rooms available</div>
+      </div>
+      <div class="cell">
+        <div class="k">ADR · average daily rate</div>
+        <div class="v">Room revenue ÷ rooms sold</div>
+      </div>
+      <div class="cell">
+        <div class="k">RevPAR · revenue per available room</div>
+        <div class="v">Room revenue ÷ rooms available <br>(= Occupancy × ADR)</div>
+      </div>
+    </div>
+
+    <div class="sect-head sect-head--wide" style="margin-top: 72px;">
+      <div class="eyebrow">The three indices</div>
+      <h2>Everything indexes to 100.</h2>
+      <p class="lede">An index compares your property to the aggregate of your competitive set. 100 is parity; above 100 you are capturing more than your fair share, below 100 you are leaving it on the table. The comp-set aggregate is room-weighted and excludes the subject hotel itself — the same way STR builds it.</p>
+    </div>
+
+    <div class="how">
+      <div class="step">
+        <div class="n">Index <b>MPI</b></div>
+        <h3>Market Penetration</h3>
+        <p>Your occupancy ÷ comp-set occupancy × 100. Are you filling rooms faster than your competitors?</p>
+        <div class="tick">Occupancy fair share</div>
+      </div>
+      <div class="step">
+        <div class="n">Index <b>ARI</b></div>
+        <h3>Average Rate Index</h3>
+        <p>Your ADR ÷ comp-set ADR × 100. Are you priced above or below the set?</p>
+        <div class="tick">Rate fair share</div>
+      </div>
+      <div class="step">
+        <div class="n">Index <b>RGI</b></div>
+        <h3>Revenue Generation</h3>
+        <p>Your RevPAR ÷ comp-set RevPAR × 100. The bottom line — occupancy and rate combined.</p>
+        <div class="tick">Revenue fair share</div>
+      </div>
+      <div class="step">
+        <div class="n">Note <b>↗</b></div>
+        <h3>Reading them together</h3>
+        <p>High ARI with low MPI usually means you're priced ahead of the market and giving up nights. RGI is the referee.</p>
+        <div class="tick">The full picture</div>
+      </div>
+    </div>
+
+    <div class="dash-banner" style="margin-top: 56px;">
+      <div>
+        <h4>About the Orlando demo data</h4>
+        <p>The 30 Orlando hotels on the benchmark are real properties — names, brands, submarkets and room counts are accurate and public. Their performance figures (occupancy, ADR, RevPAR) are <b>representative estimates modeled on public Orlando market patterns and seasonality</b>, not licensed STR/CoStar STAR data. The index methodology, comp-set logic and seasonality are production-grade, so the workspace behaves exactly as it would on your live PMS and STR feeds. When you connect your accounts, modeled data is replaced with your actuals.</p>
+      </div>
+      <a href="benchmark.html" class="btn btn-solid">Open the benchmark
+        <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
+      </a>
+    </div>
+
   </div>
 </section>
 
