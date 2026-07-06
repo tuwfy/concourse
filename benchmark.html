@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>STAR Benchmark · Concourse</title>
-<meta name="description" content="A live competitive benchmarking workspace. Pick a hotel, see its comp set's occupancy, ADR, RevPAR and the STR index metrics (MPI / ARI / RGI) — built on real Orlando, FL properties.">
+<meta name="description" content="A live competitive benchmarking workspace. Pick a hotel, see its comp set's occupancy, ADR, RevPAR and the STR index metrics (MPI / ARI / RGI), built on real Orlando, FL properties.">
 <meta name="theme-color" content="#1f4e3a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +58,7 @@
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a> · Benchmark · Orlando, FL</div>
     <h1>Every competitor, every metric, <span class="soft">one STAR report.</span></h1>
-    <p class="lede">Pick any property below. Concourse pulls its competitive set, indexes occupancy, ADR and RevPAR against the market, and shows exactly where it wins and loses — the same view a revenue manager opens to set next week's rate. Live across <b>30 real Orlando hotels</b>.</p>
+    <p class="lede">Pick any property below. Concourse pulls its competitive set, indexes occupancy, ADR and RevPAR against the market, and shows exactly where it wins and loses, the same view a revenue manager opens to set next week's rate. Live across <b>30 real Orlando hotels</b>.</p>
   </div>
 </header>
 
@@ -73,7 +73,7 @@
       </div>
       <div class="star-controls-meta">
         <div class="scm-item"><span class="lab">Market</span><span class="val">Orlando, FL</span></div>
-        <div class="scm-item"><span class="lab">Period</span><span class="val">Trailing 12 mo · 2025–26</span></div>
+        <div class="scm-item"><span class="lab">Period</span><span class="val">Trailing 12 mo · 2025-26</span></div>
         <button class="btn btn-solid" id="exportBtn">
           Export STAR report
           <svg class="arr" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 9 L9 2 M3.5 2 L9 2 L9 7.5"/></svg>
@@ -85,12 +85,12 @@
 
       <div class="dash-head">
         <div>
-          <div class="hotel-name" id="subjectName">—</div>
-          <div class="hotel-loc" id="subjectMeta">—</div>
+          <div class="hotel-name" id="subjectName">,</div>
+          <div class="hotel-loc" id="subjectMeta">,</div>
         </div>
         <div class="comp-badge">
           <span class="cb-lab">Competitive set</span>
-          <span class="cb-val" id="compName">—</span>
+          <span class="cb-val" id="compName">,</span>
         </div>
       </div>
 
@@ -98,23 +98,23 @@
       <div class="kpi-grid">
         <div class="kpi">
           <div class="lab">Occupancy</div>
-          <span class="val" id="kOcc">—</span>
-          <div class="trend" id="kOccYoY">—</div>
+          <span class="val" id="kOcc">,</span>
+          <div class="trend" id="kOccYoY">,</div>
         </div>
         <div class="kpi">
           <div class="lab">ADR</div>
-          <span class="val" id="kAdr">—</span>
-          <div class="trend" id="kAdrYoY">—</div>
+          <span class="val" id="kAdr">,</span>
+          <div class="trend" id="kAdrYoY">,</div>
         </div>
         <div class="kpi">
           <div class="lab">RevPAR</div>
-          <span class="val" id="kRevpar">—</span>
-          <div class="trend" id="kRevparYoY">—</div>
+          <span class="val" id="kRevpar">,</span>
+          <div class="trend" id="kRevparYoY">,</div>
         </div>
         <div class="kpi">
           <div class="lab">Comp-set position</div>
-          <span class="val rank-val" id="kRank">—</span>
-          <div class="trend rank-sub" id="kRankSub">—</div>
+          <span class="val rank-val" id="kRank">,</span>
+          <div class="trend rank-sub" id="kRankSub">,</div>
         </div>
       </div>
 
@@ -122,21 +122,21 @@
       <div class="idx-grid">
         <div class="idx-card">
           <div class="idx-head"><span class="idx-name">MPI</span><span class="idx-full">Market Penetration · occupancy</span></div>
-          <div class="idx-val" id="mpi">—</div>
+          <div class="idx-val" id="mpi">,</div>
           <div class="idx-scale"><span>70</span><span class="par">100 par</span><span>130</span><div class="idx-track"><div class="idx-marker" id="mpiBar"></div></div></div>
-          <div class="idx-rank" id="mpiRank">—</div>
+          <div class="idx-rank" id="mpiRank">,</div>
         </div>
         <div class="idx-card">
           <div class="idx-head"><span class="idx-name">ARI</span><span class="idx-full">Average Rate · ADR</span></div>
-          <div class="idx-val" id="ari">—</div>
+          <div class="idx-val" id="ari">,</div>
           <div class="idx-scale"><span>70</span><span class="par">100 par</span><span>130</span><div class="idx-track"><div class="idx-marker" id="ariBar"></div></div></div>
-          <div class="idx-rank" id="ariRank">—</div>
+          <div class="idx-rank" id="ariRank">,</div>
         </div>
         <div class="idx-card">
           <div class="idx-head"><span class="idx-name">RGI</span><span class="idx-full">Revenue Generation · RevPAR</span></div>
-          <div class="idx-val" id="rgi">—</div>
+          <div class="idx-val" id="rgi">,</div>
           <div class="idx-scale"><span>70</span><span class="par">100 par</span><span>130</span><div class="idx-track"><div class="idx-marker" id="rgiBar"></div></div></div>
-          <div class="idx-rank" id="rgiRank">—</div>
+          <div class="idx-rank" id="rgiRank">,</div>
         </div>
       </div>
 
@@ -146,7 +146,7 @@
           <div class="panel-head">
             <div>
               <div class="panel-title">Performance vs. comp set</div>
-              <div class="panel-sub" id="trendCaption">—</div>
+              <div class="panel-sub" id="trendCaption">,</div>
             </div>
             <div class="dash-period" id="trendTabs">
               <button data-metric="occ">Occ</button>
@@ -176,14 +176,14 @@
               <tbody id="compBody"></tbody>
             </table>
           </div>
-          <div class="comp-footnote" id="compFootnote">—</div>
+          <div class="comp-footnote" id="compFootnote">,</div>
         </div>
       </div>
 
       <div class="dash-banner">
         <div>
           <h4>Read it like a revenue manager.</h4>
-          <p>An index of <b>100</b> means you're at parity with your comp set. Above 100 you're capturing more than your fair share; below 100 you're leaving it on the table. RGI is the one that pays the bills — it folds occupancy and rate into a single fair-share number.</p>
+          <p>An index of <b>100</b> means you're at parity with your comp set. Above 100 you're capturing more than your fair share; below 100 you're leaving it on the table. RGI is the one that pays the bills, it folds occupancy and rate into a single fair-share number.</p>
         </div>
         <a href="methodology.html" target="_blank" class="btn btn-solid">
           How the math works
@@ -226,7 +226,7 @@
       <div class="step">
         <div class="n">Index <b>03</b></div>
         <h3>RGI · RevPAR</h3>
-        <p>RevPAR vs. the set — the bottom line. It blends occupancy and rate into one fair-share figure. This is the number owners track.</p>
+        <p>RevPAR vs. the set, the bottom line. It blends occupancy and rate into one fair-share figure. This is the number owners track.</p>
         <div class="tick">The scoreboard</div>
       </div>
       <div class="step">

@@ -297,9 +297,9 @@ window.CONCOURSE_DATA = {
       currentADR: 268, projectedADR: 312,
       groupPipeline: 1840, conferenceCount: 142, leisureIndex: 92,
       pipeline: [
-        { name: 'CES 2027', dates: 'Jan 6–9, 2027', att: '165k attendees', value: '$312M' },
-        { name: 'NAB Show 2027', dates: 'Apr 24–28, 2027', att: '95k attendees', value: '$158M' },
-        { name: 'World of Concrete 2027', dates: 'Jan 19–22, 2027', att: '60k attendees', value: '$89M' }
+        { name: 'CES 2027', dates: 'Jan 6-9, 2027', att: '165k attendees', value: '$312M' },
+        { name: 'NAB Show 2027', dates: 'Apr 24-28, 2027', att: '95k attendees', value: '$158M' },
+        { name: 'World of Concrete 2027', dates: 'Jan 19-22, 2027', att: '60k attendees', value: '$89M' }
       ],
       development: [
         'MSG Sphere Q2 expansion adds 12,000 secondary venue capacity.',
@@ -314,9 +314,9 @@ window.CONCOURSE_DATA = {
       currentADR: 232, projectedADR: 268,
       groupPipeline: 920, conferenceCount: 86, leisureIndex: 74,
       pipeline: [
-        { name: 'RSNA 2026', dates: 'Nov 29 – Dec 4, 2026', att: '50k attendees', value: '$84M' },
-        { name: 'IMTS 2026', dates: 'Sep 14–19, 2026', att: '88k attendees', value: '$142M' },
-        { name: 'McCormick Tech Summit 2027', dates: 'Mar 8–11, 2027', att: '22k attendees', value: '$38M' }
+        { name: 'RSNA 2026', dates: 'Nov 29 - Dec 4, 2026', att: '50k attendees', value: '$84M' },
+        { name: 'IMTS 2026', dates: 'Sep 14-19, 2026', att: '88k attendees', value: '$142M' },
+        { name: 'McCormick Tech Summit 2027', dates: 'Mar 8-11, 2027', att: '22k attendees', value: '$38M' }
       ],
       development: [
         'McCormick Place southwest concourse opens 2027, adding 180k sqft of event space.',
@@ -331,9 +331,9 @@ window.CONCOURSE_DATA = {
       currentADR: 298, projectedADR: 344,
       groupPipeline: 1120, conferenceCount: 94, leisureIndex: 88,
       pipeline: [
-        { name: 'NAMM Show 2027', dates: 'Jan 21–24, 2027', att: '110k attendees', value: '$96M' },
-        { name: 'E3 Returns 2027', dates: 'Jun 8–10, 2027', att: '60k attendees', value: '$74M' },
-        { name: 'AHA Scientific Sessions 2026', dates: 'Nov 14–17, 2026', att: '16k attendees', value: '$28M' }
+        { name: 'NAMM Show 2027', dates: 'Jan 21-24, 2027', att: '110k attendees', value: '$96M' },
+        { name: 'E3 Returns 2027', dates: 'Jun 8-10, 2027', att: '60k attendees', value: '$74M' },
+        { name: 'AHA Scientific Sessions 2026', dates: 'Nov 14-17, 2026', att: '16k attendees', value: '$28M' }
       ],
       development: [
         'LA Live group corridor adds 620 keys; Intuit Dome group business reopens Q1.',
@@ -348,13 +348,13 @@ window.CONCOURSE_DATA = {
       currentADR: 286, projectedADR: 372,
       groupPipeline: 880, conferenceCount: 68, leisureIndex: 79,
       pipeline: [
-        { name: 'Salesforce Dreamforce 2026', dates: 'Oct 13–16, 2026', att: '170k attendees', value: '$234M' },
-        { name: 'RSA Conference 2027', dates: 'Mar 1–5, 2027', att: '45k attendees', value: '$76M' },
-        { name: 'JPMorgan Healthcare Conf', dates: 'Jan 12–15, 2027', att: '8k attendees', value: '$98M' }
+        { name: 'Salesforce Dreamforce 2026', dates: 'Oct 13-16, 2026', att: '170k attendees', value: '$234M' },
+        { name: 'RSA Conference 2027', dates: 'Mar 1-5, 2027', att: '45k attendees', value: '$76M' },
+        { name: 'JPMorgan Healthcare Conf', dates: 'Jan 12-15, 2027', att: '8k attendees', value: '$98M' }
       ],
       development: [
         'Moscone West Hall A reopens after $112M refit; two conferences relocate from Las Vegas.',
-        'SoMa lifestyle hotel pipeline: 410 keys delivering 2026–2027.'
+        'SoMa lifestyle hotel pipeline: 410 keys delivering 2026-2027.'
       ]
     },
     {
@@ -365,8 +365,8 @@ window.CONCOURSE_DATA = {
       currentADR: 712, projectedADR: 894,
       groupPipeline: 184, conferenceCount: 22, leisureIndex: 96,
       pipeline: [
-        { name: 'Premiere Napa Valley Auction', dates: 'Feb 26–28, 2027', att: '1.2k attendees', value: '$14M' },
-        { name: 'Auction Napa Valley 2027', dates: 'Jun 4–7, 2027', att: '2.4k attendees', value: '$22M' },
+        { name: 'Premiere Napa Valley Auction', dates: 'Feb 26-28, 2027', att: '1.2k attendees', value: '$14M' },
+        { name: 'Auction Napa Valley 2027', dates: 'Jun 4-7, 2027', att: '2.4k attendees', value: '$22M' },
         { name: 'Crush Camp Series 2026', dates: 'Oct (rolling)', att: '5k attendees', value: '$9M' }
       ],
       development: [
@@ -382,9 +382,9 @@ window.CONCOURSE_DATA = {
       currentADR: 442, projectedADR: 518,
       groupPipeline: 2640, conferenceCount: 164, leisureIndex: 98,
       pipeline: [
-        { name: 'NRF Big Show 2027', dates: 'Jan 17–19, 2027', att: '40k attendees', value: '$96M' },
-        { name: 'UN General Assembly 2026', dates: 'Sep 14–30, 2026', att: '180+ delegations', value: '$182M' },
-        { name: 'Cannes Lions NYC Forum', dates: 'Mar 4–6, 2027', att: '6k attendees', value: '$14M' }
+        { name: 'NRF Big Show 2027', dates: 'Jan 17-19, 2027', att: '40k attendees', value: '$96M' },
+        { name: 'UN General Assembly 2026', dates: 'Sep 14-30, 2026', att: '180+ delegations', value: '$182M' },
+        { name: 'Cannes Lions NYC Forum', dates: 'Mar 4-6, 2027', att: '6k attendees', value: '$14M' }
       ],
       development: [
         'Hudson Yards Phase 3 ballroom space coming 2028 (+90k sqft).',
@@ -399,9 +399,9 @@ window.CONCOURSE_DATA = {
       currentADR: 248, projectedADR: 312,
       groupPipeline: 64, conferenceCount: 12, leisureIndex: 84,
       pipeline: [
-        { name: 'Adirondack Wedding Season', dates: 'May – Oct 2026', att: '320 events', value: '$11M' },
-        { name: 'Lake George Bike Tour 2026', dates: 'Sep 12–14, 2026', att: '4k attendees', value: '$6M' },
-        { name: 'Tournament Series Fall 2026', dates: 'Aug – Oct 2026', att: '24 events', value: '$4M' }
+        { name: 'Adirondack Wedding Season', dates: 'May - Oct 2026', att: '320 events', value: '$11M' },
+        { name: 'Lake George Bike Tour 2026', dates: 'Sep 12-14, 2026', att: '4k attendees', value: '$6M' },
+        { name: 'Tournament Series Fall 2026', dates: 'Aug - Oct 2026', att: '24 events', value: '$4M' }
       ],
       development: [
         'Adirondack Northway exit reconfig 2027 cuts metro-LG transit by 18 minutes.',
@@ -416,9 +416,9 @@ window.CONCOURSE_DATA = {
       currentADR: 824, projectedADR: 982,
       groupPipeline: 96, conferenceCount: 9, leisureIndex: 94,
       pipeline: [
-        { name: 'Hamptons International Film Fest', dates: 'Oct 8–13, 2026', att: '6k attendees', value: '$9M' },
-        { name: 'East End Bridal Series 2027', dates: 'Jun – Aug 2027', att: '180 events', value: '$26M' },
-        { name: 'Polo Classic 2026', dates: 'Aug 28–30, 2026', att: '3k attendees', value: '$5M' }
+        { name: 'Hamptons International Film Fest', dates: 'Oct 8-13, 2026', att: '6k attendees', value: '$9M' },
+        { name: 'East End Bridal Series 2027', dates: 'Jun - Aug 2027', att: '180 events', value: '$26M' },
+        { name: 'Polo Classic 2026', dates: 'Aug 28-30, 2026', att: '3k attendees', value: '$5M' }
       ],
       development: [
         'East End rail spur upgrade clears bottleneck for off-season programming.',
@@ -433,8 +433,8 @@ window.CONCOURSE_DATA = {
       currentADR: 226, projectedADR: 296,
       groupPipeline: 580, conferenceCount: 58, leisureIndex: 86,
       pipeline: [
-        { name: 'AACR 2027', dates: 'Apr 9–13, 2027', att: '23k attendees', value: '$42M' },
-        { name: 'Florida State Fair 2027', dates: 'Feb 4–15, 2027', att: '480k attendees', value: '$58M' },
+        { name: 'AACR 2027', dates: 'Apr 9-13, 2027', att: '23k attendees', value: '$42M' },
+        { name: 'Florida State Fair 2027', dates: 'Feb 4-15, 2027', att: '480k attendees', value: '$58M' },
         { name: 'SEC Football Championship 2026', dates: 'Dec 5, 2026', att: '78k attendees', value: '$34M' }
       ],
       development: [
@@ -450,12 +450,12 @@ window.CONCOURSE_DATA = {
       currentADR: 168, projectedADR: 228,
       groupPipeline: 248, conferenceCount: 34, leisureIndex: 78,
       pipeline: [
-        { name: 'Imperial Polk Cattle & Rodeo', dates: 'Jan 14–18, 2027', att: '60k attendees', value: '$9M' },
+        { name: 'Imperial Polk Cattle & Rodeo', dates: 'Jan 14-18, 2027', att: '60k attendees', value: '$9M' },
         { name: 'Lake Wales Wedding Corridor', dates: 'Spring 2027', att: '220 events', value: '$14M' },
-        { name: 'Mid-Florida Air Show 2026', dates: 'Oct 16–18, 2026', att: '80k attendees', value: '$7M' }
+        { name: 'Mid-Florida Air Show 2026', dates: 'Oct 16-18, 2026', att: '80k attendees', value: '$7M' }
       ],
       development: [
-        'I-4 corridor lifestyle pipeline: 480 keys 2026–2028.',
+        'I-4 corridor lifestyle pipeline: 480 keys 2026-2028.',
         '$50M tourism corridor bond pass funds 2027 road and venue upgrades.'
       ]
     },
@@ -467,13 +467,13 @@ window.CONCOURSE_DATA = {
       currentADR: 218, projectedADR: 282,
       groupPipeline: 2240, conferenceCount: 188, leisureIndex: 95,
       pipeline: [
-        { name: 'IAAPA Expo 2026', dates: 'Nov 16–20, 2026', att: '39k attendees', value: '$98M' },
-        { name: 'PGA Show 2027', dates: 'Jan 26–29, 2027', att: '40k attendees', value: '$74M' },
-        { name: 'AAOS Annual Meeting 2027', dates: 'Mar 8–12, 2027', att: '30k attendees', value: '$58M' }
+        { name: 'IAAPA Expo 2026', dates: 'Nov 16-20, 2026', att: '39k attendees', value: '$98M' },
+        { name: 'PGA Show 2027', dates: 'Jan 26-29, 2027', att: '40k attendees', value: '$74M' },
+        { name: 'AAOS Annual Meeting 2027', dates: 'Mar 8-12, 2027', att: '30k attendees', value: '$58M' }
       ],
       development: [
         'Orange County Convention Center Phase 5 breaks ground 2026.',
-        'Disney convention-class expansion: 800 new keys 2027–2028.'
+        'Disney convention-class expansion: 800 new keys 2027-2028.'
       ]
     },
     {
@@ -484,9 +484,9 @@ window.CONCOURSE_DATA = {
       currentADR: 384, projectedADR: 482,
       groupPipeline: 1480, conferenceCount: 124, leisureIndex: 97,
       pipeline: [
-        { name: 'Art Basel Miami 2026', dates: 'Dec 3–7, 2026', att: '80k attendees', value: '$124M' },
-        { name: 'SOBE Wine & Food 2027', dates: 'Feb 24–28, 2027', att: '60k attendees', value: '$48M' },
-        { name: 'eMerge Americas 2027', dates: 'Apr 6–7, 2027', att: '16k attendees', value: '$22M' }
+        { name: 'Art Basel Miami 2026', dates: 'Dec 3-7, 2026', att: '80k attendees', value: '$124M' },
+        { name: 'SOBE Wine & Food 2027', dates: 'Feb 24-28, 2027', att: '60k attendees', value: '$48M' },
+        { name: 'eMerge Americas 2027', dates: 'Apr 6-7, 2027', att: '16k attendees', value: '$22M' }
       ],
       development: [
         'Miami Beach Convention Center luxury annex opens 2027.',
@@ -501,9 +501,9 @@ window.CONCOURSE_DATA = {
       currentADR: 242, projectedADR: 308,
       groupPipeline: 1240, conferenceCount: 102, leisureIndex: 80,
       pipeline: [
-        { name: 'Esri DevSummit 2027', dates: 'Mar 9–13, 2027', att: '4k attendees', value: '$8M' },
-        { name: 'ATA Truckload Strategies 2027', dates: 'Mar 21–24, 2027', att: '6k attendees', value: '$9M' },
-        { name: 'Dallas Auto Show 2027', dates: 'Mar 25 – Apr 2, 2027', att: '220k attendees', value: '$34M' }
+        { name: 'Esri DevSummit 2027', dates: 'Mar 9-13, 2027', att: '4k attendees', value: '$8M' },
+        { name: 'ATA Truckload Strategies 2027', dates: 'Mar 21-24, 2027', att: '6k attendees', value: '$9M' },
+        { name: 'Dallas Auto Show 2027', dates: 'Mar 25 - Apr 2, 2027', att: '220k attendees', value: '$34M' }
       ],
       development: [
         'Kay Bailey Hutchison Convention Center master plan funded; 2028 ground-break.',
@@ -518,13 +518,13 @@ window.CONCOURSE_DATA = {
       currentADR: 278, projectedADR: 372,
       groupPipeline: 940, conferenceCount: 78, leisureIndex: 91,
       pipeline: [
-        { name: 'SXSW 2027', dates: 'Mar 12–21, 2027', att: '280k attendees', value: '$356M' },
-        { name: 'F1 US Grand Prix 2026', dates: 'Oct 23–25, 2026', att: '440k attendees', value: '$410M' },
-        { name: 'ACL Music Festival 2026', dates: 'Oct 2–11, 2026', att: '450k attendees', value: '$96M' }
+        { name: 'SXSW 2027', dates: 'Mar 12-21, 2027', att: '280k attendees', value: '$356M' },
+        { name: 'F1 US Grand Prix 2026', dates: 'Oct 23-25, 2026', att: '440k attendees', value: '$410M' },
+        { name: 'ACL Music Festival 2026', dates: 'Oct 2-11, 2026', att: '450k attendees', value: '$96M' }
       ],
       development: [
         'Austin Convention Center expansion: doubles main hall, opens 2028.',
-        'Mueller and East Austin pipeline: 1,400 lifestyle keys 2026–2028.'
+        'Mueller and East Austin pipeline: 1,400 lifestyle keys 2026-2028.'
       ]
     },
     {

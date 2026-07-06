@@ -4,7 +4,7 @@
    Real Orlando, FL hotels (names, brands, submarkets, room counts) with
    modeled STR-style performance metrics. Performance figures (occupancy,
    ADR, RevPAR) are *representative estimates* built on public Orlando
-   market patterns — they are not licensed STR/CoStar STAR data. The math,
+   market patterns, they are not licensed STR/CoStar STAR data. The math,
    index methodology, seasonality and comp-set logic mirror a real STAR
    report so the workspace behaves exactly like the product would on live
    feeds. See methodology.html for the full note.
@@ -17,7 +17,7 @@
   const MONTHS = ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'];
 
   // Orlando seasonality (index to annual mean ≈ 1.0). Spring break + summer
-  // family travel + fall convention season are the peaks; Aug–Sep is the trough.
+  // family travel + fall convention season are the peaks; Aug-Sep is the trough.
   // Arrays are ordered to match MONTHS above (May → Apr).
   const SEASON_OCC = [0.98, 1.05, 1.08, 0.90, 0.82, 1.00, 1.02, 0.92, 0.95, 1.05, 1.18, 1.08];
   const SEASON_ADR = [0.97, 1.02, 1.04, 0.92, 0.88, 1.02, 1.05, 1.00, 0.96, 1.08, 1.20, 1.06];
@@ -32,10 +32,10 @@
   ];
 
   // ---- Hotels -------------------------------------------------------------
-  // occ = annual avg occupancy (0–1) · adr = annual avg daily rate ($)
+  // occ = annual avg occupancy (0-1) · adr = annual avg daily rate ($)
   // rooms are real published counts. comp = competitive set id.
   const HOTELS = [
-    // —— Convention & Big-Box ——
+    // ,, Convention & Big-Box ,,
     { id: 'world-center', name: 'Orlando World Center Marriott',          brand: 'Marriott',       sub: 'Lake Buena Vista', klass: 'Upper Upscale', rooms: 2009, occ: 0.77, adr: 258, comp: 'cs-conv' },
     { id: 'gaylord',      name: 'Gaylord Palms Resort & Conv. Center',    brand: 'Gaylord',        sub: 'Kissimmee',        klass: 'Upper Upscale', rooms: 1718, occ: 0.75, adr: 264, comp: 'cs-conv' },
     { id: 'hyatt-reg',    name: 'Hyatt Regency Orlando',                  brand: 'Hyatt',          sub: 'International Dr',  klass: 'Upper Upscale', rooms: 1641, occ: 0.78, adr: 245, comp: 'cs-conv' },
@@ -46,13 +46,13 @@
     { id: 'signia',       name: 'Signia by Hilton Orlando Bonnet Creek',  brand: 'Hilton',         sub: 'Bonnet Creek',     klass: 'Upper Upscale', rooms: 1009, occ: 0.76, adr: 271, comp: 'cs-conv' },
     { id: 'rosen-plaza',  name: 'Rosen Plaza Hotel',                      brand: 'Rosen',          sub: 'International Dr',  klass: 'Upscale',       rooms: 800,  occ: 0.75, adr: 179, comp: 'cs-conv' },
 
-    // —— Luxury Resort ——
+    // ,, Luxury Resort ,,
     { id: 'four-seasons', name: 'Four Seasons Resort Orlando at WDW',     brand: 'Four Seasons',   sub: 'Golden Oak',       klass: 'Luxury',        rooms: 444,  occ: 0.72, adr: 712, comp: 'cs-lux' },
     { id: 'ritz',         name: 'The Ritz-Carlton Orlando, Grande Lakes', brand: 'Ritz-Carlton',  sub: 'Grande Lakes',     klass: 'Luxury',        rooms: 582,  occ: 0.70, adr: 589, comp: 'cs-lux' },
     { id: 'waldorf',      name: 'Waldorf Astoria Orlando',                brand: 'Hilton',         sub: 'Bonnet Creek',     klass: 'Luxury',        rooms: 502,  occ: 0.71, adr: 498, comp: 'cs-lux' },
     { id: 'jw-grande',    name: 'JW Marriott Orlando, Grande Lakes',      brand: 'Marriott',       sub: 'Grande Lakes',     klass: 'Luxury',        rooms: 998,  occ: 0.74, adr: 449, comp: 'cs-lux' },
 
-    // —— Universal Orlando ——
+    // ,, Universal Orlando ,,
     { id: 'cabana-bay',   name: "Universal's Cabana Bay Beach Resort",    brand: 'Loews',          sub: 'Universal Resort', klass: 'Upscale',       rooms: 2200, occ: 0.87, adr: 184, comp: 'cs-uo' },
     { id: 'royal-pacific',name: "Loews Royal Pacific Resort",             brand: 'Loews',          sub: 'Universal Resort', klass: 'Upper Upscale', rooms: 1000, occ: 0.85, adr: 312, comp: 'cs-uo' },
     { id: 'sapphire',     name: 'Loews Sapphire Falls Resort',            brand: 'Loews',          sub: 'Universal Resort', klass: 'Upper Upscale', rooms: 1000, occ: 0.83, adr: 268, comp: 'cs-uo' },
@@ -60,14 +60,14 @@
     { id: 'hard-rock',    name: 'Hard Rock Hotel at Universal Orlando',   brand: 'Loews',          sub: 'Universal Resort', klass: 'Upper Upscale', rooms: 650,  occ: 0.86, adr: 372, comp: 'cs-uo' },
     { id: 'aventura',     name: "Universal's Aventura Hotel",             brand: 'Loews',          sub: 'Universal Resort', klass: 'Upscale',       rooms: 600,  occ: 0.85, adr: 215, comp: 'cs-uo' },
 
-    // —— Upscale I-Drive / SeaWorld ——
+    // ,, Upscale I-Drive / SeaWorld ,,
     { id: 'doubletree-sw',name: 'DoubleTree by Hilton Orlando at SeaWorld',brand: 'Hilton',        sub: 'SeaWorld',         klass: 'Upscale',       rooms: 1094, occ: 0.78, adr: 171, comp: 'cs-idrive' },
     { id: 'renaissance-sw',name:'Renaissance Orlando at SeaWorld',        brand: 'Marriott',       sub: 'SeaWorld',         klass: 'Upper Upscale', rooms: 781,  occ: 0.77, adr: 209, comp: 'cs-idrive' },
     { id: 'wyndham-id',   name: 'Wyndham Orlando Resort International Dr', brand: 'Wyndham',        sub: 'International Dr',  klass: 'Upscale',       rooms: 613,  occ: 0.74, adr: 149, comp: 'cs-idrive' },
     { id: 'drury',        name: 'Drury Plaza Hotel Orlando',              brand: 'Drury',          sub: 'Disney Springs',   klass: 'Upscale',       rooms: 238,  occ: 0.82, adr: 196, comp: 'cs-idrive' },
     { id: 'embassy-id',   name: 'Embassy Suites Orlando I-Drive Conv. Ctr',brand: 'Hilton',        sub: 'International Dr',  klass: 'Upscale',       rooms: 244,  occ: 0.80, adr: 188, comp: 'cs-idrive' },
 
-    // —— Lake Buena Vista / Disney Springs ——
+    // ,, Lake Buena Vista / Disney Springs ,,
     { id: 'dolphin',      name: 'Walt Disney World Dolphin',              brand: 'Marriott',       sub: 'Disney Springs',   klass: 'Upper Upscale', rooms: 1514, occ: 0.80, adr: 289, comp: 'cs-lbv' },
     { id: 'palace',       name: 'Hilton Orlando Buena Vista Palace',      brand: 'Hilton',         sub: 'Disney Springs',   klass: 'Upper Upscale', rooms: 1011, occ: 0.78, adr: 224, comp: 'cs-lbv' },
     { id: 'hilton-lbv',   name: 'Hilton Orlando Lake Buena Vista',        brand: 'Hilton',         sub: 'Disney Springs',   klass: 'Upper Upscale', rooms: 814,  occ: 0.79, adr: 241, comp: 'cs-lbv' },
@@ -232,7 +232,7 @@
   function paintIndex(key, val, rk, total) {
     $(key).textContent = val.toFixed(1);
     $(key).className = 'idx-val ' + indexClass(val);
-    // bar: 100 sits at center; clamp display range 70–130.
+    // bar: 100 sits at center; clamp display range 70-130.
     const clamped = Math.max(70, Math.min(130, val));
     const left = ((clamped - 70) / 60) * 100;
     const bar = $(key + 'Bar');
